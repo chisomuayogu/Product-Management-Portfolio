@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-near-black;
+  }
+
+  /* Focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-burgundy;
+  }
+}
+
+@layer components {
+  .button-primary {
+    @apply px-6 py-3 bg-burgundy text-ivory rounded transition-colors duration-200 hover:bg-opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy;
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 border border-near-black text-near-black rounded transition-colors duration-200 hover:bg-near-black hover:text-ivory focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-near-black;
+  }
+
+  .button-ghost {
+    @apply text-near-black hover:text-burgundy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy;
+  }
+
+  .link-primary {
+    @apply text-near-black hover:text-burgundy transition-colors duration-200 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy;
+  }
+
+  .link-ghost {
+    @apply text-near-black hover:text-burgundy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs md:text-sm font-semibold uppercase tracking-widest text-grey-secondary;
+  }
+
+  .heading-hero {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-near-black;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-bold leading-tight text-near-black;
+  }
+
+  .heading-card {
+    @apply text-xl md:text-2xl font-semibold text-near-black;
+  }
+
+  .body-large {
+    @apply text-lg md:text-xl leading-relaxed text-near-black;
+  }
+
+  .body-default {
+    @apply text-base md:text-lg leading-relaxed text-near-black;
+  }
+
+  .body-secondary {
+    @apply text-base md:text-lg leading-relaxed text-grey-secondary;
+  }
+
+  .body-small {
+    @apply text-sm md:text-base leading-relaxed text-grey-secondary;
+  }
+}
