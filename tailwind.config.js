@@ -8,10 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'ivory': '#F5F1ED',
-        'near-black': '#1A1A1A',
-        'grey-secondary': '#6B6B6B',
-        'burgundy': '#5C3D3D',
+        'ivory': 'var(--background)',
+        'cream': 'var(--background-secondary)',
+        'surface': 'var(--surface)',
+        'blush': 'var(--blush)',
+        'near-black': 'var(--foreground)',
+        'grey-secondary': 'var(--muted)',
+        'burgundy': 'var(--accent)',
+        'burgundy-light': 'var(--accent-light)',
+        'burgundy-dark': 'var(--accent-dark)',
+      },
+      boxShadow: {
+        'wine-sm': 'var(--shadow-accent-sm)',
+        'wine': 'var(--shadow-accent)',
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],

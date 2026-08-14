@@ -7,10 +7,9 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-ivory border-b border-grey-secondary/10">
-      <nav className="container-wide py-6 md:py-8">
+    <header className="sticky top-0 z-50 border-b border-burgundy/10 bg-ivory/80 shadow-wine-sm backdrop-blur-xl">
+      <nav className="container-wide py-6 md:py-8" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          {/* Logo/Name */}
           <Link
             href="/"
             className="text-lg md:text-xl font-semibold text-near-black hover:text-burgundy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
@@ -18,35 +17,24 @@ export default function Navigation() {
             Chisom Ayogu
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="#work"
-              className="link-ghost"
-            >
+            <Link href="/#work" className="link-ghost">
               Work
             </Link>
-            <Link
-              href="#about"
-              className="link-ghost"
-            >
+            <Link href="/about" className="link-ghost">
               About
             </Link>
-            <a
-              href="/cv"
-              className="link-ghost"
-            >
+            <Link href="/earlier-work" className="link-ghost">
+              Earlier Work
+            </Link>
+            <Link href="/cv" className="link-ghost">
               CV
-            </a>
-            <Link
-              href="#contact"
-              className="button-primary text-sm"
-            >
+            </Link>
+            <Link href="/contact" className="button-primary text-sm">
               Contact
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-near-black hover:text-burgundy transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
             onClick={() => setIsOpen(!isOpen)}
@@ -69,33 +57,21 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-6 pt-6 border-t border-grey-secondary/10 flex flex-col gap-4">
-            <Link
-              href="#work"
-              className="body-default hover:text-burgundy transition-colors duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+          <div className="md:hidden mt-6 pt-6 border-t border-burgundy/10 flex flex-col gap-4">
+            <Link href="/#work" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
               Work
             </Link>
-            <Link
-              href="#about"
-              className="body-default hover:text-burgundy transition-colors duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href="/about" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
               About
             </Link>
-            <a
-              href="/cv"
-              className="body-default hover:text-burgundy transition-colors duration-200"
-            >
+            <Link href="/earlier-work" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
+              Earlier Work
+            </Link>
+            <Link href="/cv" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
               CV
-            </a>
-            <Link
-              href="#contact"
-              className="button-primary text-sm inline-block text-center"
-            >
+            </Link>
+            <Link href="/contact" className="button-primary text-sm inline-block text-center" onClick={() => setIsOpen(false)}>
               Contact
             </Link>
           </div>

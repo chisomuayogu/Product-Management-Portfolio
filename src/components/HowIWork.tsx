@@ -47,7 +47,7 @@ const phases: Phase[] = [
 
 export default function HowIWork() {
   return (
-    <section className="section-spacing bg-white border-t border-grey-secondary/10">
+    <section className="section-spacing section-surface border-t warm-divider">
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-16 md:mb-20 lg:mb-24">
@@ -60,7 +60,7 @@ export default function HowIWork() {
         {/* Phases Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
           {phases.map((phase) => (
-            <div key={phase.title} className="flex flex-col">
+            <div key={phase.title} className="premium-card flex flex-col p-6 md:p-7">
               {/* Phase Number */}
               <div className="mb-6 md:mb-8">
                 <h3 className="heading-card text-burgundy mb-3">

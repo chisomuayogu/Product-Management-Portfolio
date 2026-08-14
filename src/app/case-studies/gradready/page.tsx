@@ -116,7 +116,7 @@ export default function GradReadyCaseStudy() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              <div>
+              <div className="snapshot-mini">
                 <p className="eyebrow mb-3 md:mb-4">Discovery</p>
                 <ul className="space-y-2">
                   <li className="body-small text-grey-secondary">User interviews</li>
@@ -124,7 +124,7 @@ export default function GradReadyCaseStudy() {
                   <li className="body-small text-grey-secondary">Portfolio analysis</li>
                 </ul>
               </div>
-              <div>
+              <div className="snapshot-mini">
                 <p className="eyebrow mb-3 md:mb-4">Strategy</p>
                 <ul className="space-y-2">
                   <li className="body-small text-grey-secondary">MVP definition</li>
@@ -132,7 +132,7 @@ export default function GradReadyCaseStudy() {
                   <li className="body-small text-grey-secondary">Go-to-market</li>
                 </ul>
               </div>
-              <div>
+              <div className="snapshot-mini">
                 <p className="eyebrow mb-3 md:mb-4">Validation</p>
                 <ul className="space-y-2">
                   <li className="body-small text-grey-secondary">Prototype testing</li>
@@ -202,7 +202,7 @@ export default function GradReadyCaseStudy() {
       {/* Core User Journey */}
       <CaseStudySection title="Core User Journey" backgroundLight>
         <div className="container-wide">
-          <div className="space-y-4 md:space-y-6">
+          <div className="journey-timeline space-y-4 md:space-y-6">
             {[
               {
                 step: '1',
@@ -232,7 +232,7 @@ export default function GradReadyCaseStudy() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex gap-6 md:gap-8 pb-6 md:pb-8 border-b border-grey-secondary/10 last:border-b-0"
+                className="journey-step flex gap-6 md:gap-8 pb-6 md:pb-8 border-b border-burgundy/10 last:border-b-0"
               >
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-burgundy text-ivory flex items-center justify-center font-semibold text-lg">
@@ -256,8 +256,8 @@ export default function GradReadyCaseStudy() {
       {/* Key Product Decisions */}
       <CaseStudySection title="Key Product Decisions">
         <div className="container-wide">
-          <div className="space-y-8 md:space-y-12">
-            <div>
+          <div className="decision-stack space-y-6">
+            <div className="decision-card">
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 1</p>
               <h3 className="heading-card mb-4 md:mb-6">Make Documentation Continuous, Not Retrospective</h3>
               <p className="body-default text-grey-secondary mb-4">
@@ -266,7 +266,7 @@ export default function GradReadyCaseStudy() {
               <p className="body-small text-burgundy font-medium">Trade-off: Requires consistent engagement vs. One-time comprehensive reflection</p>
             </div>
 
-            <div>
+            <div className="decision-card">
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 2</p>
               <h3 className="heading-card mb-4 md:mb-6">Keep Weekly Logging Lightweight (3-5 Minutes)</h3>
               <p className="body-default text-grey-secondary mb-4">
@@ -275,7 +275,7 @@ export default function GradReadyCaseStudy() {
               <p className="body-small text-burgundy font-medium">Trade-off: Structured data vs. Depth of reflection</p>
             </div>
 
-            <div>
+            <div className="decision-card">
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 3</p>
               <h3 className="heading-card mb-4 md:mb-6">AI Assists, Student Remains in Control</h3>
               <p className="body-default text-grey-secondary mb-4">
@@ -284,7 +284,7 @@ export default function GradReadyCaseStudy() {
               <p className="body-small text-burgundy font-medium">Trade-off: Increased friction vs. Authenticity and approval</p>
             </div>
 
-            <div>
+            <div className="decision-card">
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 4</p>
               <h3 className="heading-card mb-4 md:mb-6">Separate Student Value from Bootcamp Buyer Value</h3>
               <p className="body-default text-grey-secondary mb-4">
@@ -433,8 +433,8 @@ export default function GradReadyCaseStudy() {
       {/* Metrics I Would Measure */}
       <CaseStudySection title="Metrics I Would Measure" backgroundLight>
         <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="metric-panel">
               <p className="eyebrow mb-6 md:mb-8">Student Engagement</p>
               <ul className="space-y-4">
                 <li className="body-default text-grey-secondary">
@@ -449,7 +449,7 @@ export default function GradReadyCaseStudy() {
               </ul>
             </div>
 
-            <div>
+            <div className="metric-panel">
               <p className="eyebrow mb-6 md:mb-8">Admin & Business</p>
               <ul className="space-y-4">
                 <li className="body-default text-grey-secondary">
@@ -498,7 +498,7 @@ export default function GradReadyCaseStudy() {
                   'Generic prompts and templates scale efficiently but may not fit all bootcamp cultures and curriculum.',
               },
             ].map((item, idx) => (
-              <div key={idx} className="border-l-4 border-burgundy pl-6 md:pl-8">
+              <div key={idx} className="glass-panel rounded-r-lg border-l-4 border-l-burgundy p-6 md:p-8">
                 <p className="heading-card mb-3 text-burgundy">{item.tradeoff}</p>
                 <p className="body-default text-grey-secondary">{item.description}</p>
               </div>
@@ -555,15 +555,17 @@ export default function GradReadyCaseStudy() {
       </CaseStudySection>
 
       {/* Bottom Navigation */}
-      <section className="section-spacing bg-ivory border-t border-grey-secondary/10">
-        <div className="container-wide text-center md:text-left">
-          <Link
-            href="/#work"
-            className="inline-flex items-center gap-2 button-secondary"
-          >
-            <span>←</span>
-            <span>Back to Selected Work</span>
-          </Link>
+      <section className="section-spacing section-warm border-t warm-divider">
+        <div className="container-wide">
+          <div className="cta-panel rounded-2xl px-6 py-12 md:px-12 md:py-16 text-center md:text-left">
+            <Link
+              href="/#work"
+              className="inline-flex items-center gap-2 button-on-dark"
+            >
+              <span>←</span>
+              <span>Back to Selected Work</span>
+            </Link>
+          </div>
         </div>
       </section>
 
