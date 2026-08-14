@@ -6,10 +6,20 @@ export default function Footer() {
   return (
     <footer className="bg-near-black text-ivory border-t border-burgundy-light/30">
       <div className="container-wide py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           <div>
             <h2 className="text-lg md:text-xl font-semibold mb-2">Chisom Ayogu</h2>
             <p className="text-sm md:text-base text-ivory/70">Product Manager</p>
+          </div>
+
+          <div>
+            <p className="eyebrow text-ivory/60 mb-4">Selected Work</p>
+            <ul className="space-y-2 md:space-y-3">
+              <li><Link href="/case-studies/gradready" className="text-ivory hover:text-blush transition-colors duration-200">GradReady</Link></li>
+              <li><Link href="/case-studies/impacthub" className="text-ivory hover:text-blush transition-colors duration-200">ImpactHub</Link></li>
+              <li><Link href="/case-studies/bulk-market" className="text-ivory hover:text-blush transition-colors duration-200">Bulk-Market</Link></li>
+              <li><Link href="/case-studies/foodsaver" className="text-ivory hover:text-blush transition-colors duration-200">FoodSaver</Link></li>
+            </ul>
           </div>
 
           <div>
@@ -47,10 +57,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-ivory/75">LinkedIn placeholder</span>
+                <span className="text-ivory/60">LinkedIn · Details pending</span>
               </li>
               <li>
-                <span className="text-ivory/75">Email placeholder</span>
+                <span className="text-ivory/60">Email · Details pending</span>
               </li>
             </ul>
           </div>
