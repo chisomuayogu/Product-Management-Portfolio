@@ -11,10 +11,10 @@ export default function InsightCard({
 }: InsightCardProps) {
   return (
     <div
-      className={`p-8 md:p-10 rounded border ${
+      className={`p-8 md:p-10 rounded-lg border shadow-wine-sm backdrop-blur-md ${
         highlighted
-          ? 'bg-burgundy/5 border-burgundy/30'
-          : 'bg-grey-secondary/5 border-grey-secondary/20'
+          ? 'bg-gradient-to-br from-ivory/90 to-blush/40 border-burgundy/30'
+          : 'bg-ivory/70 border-burgundy/15'
       }`}
     >
       {label && (

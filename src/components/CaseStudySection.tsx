@@ -13,15 +13,15 @@ export default function CaseStudySection({
 }: CaseStudySectionProps) {
   return (
     <section
-      className={`section-spacing border-t border-grey-secondary/10 ${
-        backgroundLight ? 'bg-ivory' : 'bg-white'
+      className={`case-study-section section-spacing border-t warm-divider ${
+        backgroundLight ? 'section-warm' : 'section-surface'
       }`}
     >
-      <div className={fullWidth ? '' : 'container-wide'}>
-        <div className={fullWidth ? 'container-wide mb-8 md:mb-12' : 'mb-8 md:mb-12'}>
+      <div className={`container-wide ${fullWidth ? '' : 'case-study-layout'}`}>
+        <div className="case-study-heading mb-8 md:mb-12">
           <h2 className="heading-section">{title}</h2>
         </div>
-        <div className={fullWidth ? '' : ''}>{children}</div>
+        <div className="case-study-content">{children}</div>
       </div>
     </section>
   )

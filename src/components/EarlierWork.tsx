@@ -1,48 +1,50 @@
+import Link from 'next/link'
+
 interface EarlierProject {
   name: string
   category: string
+  summary: string
+  href: string
 }
 
 const earlierProjects: EarlierProject[] = [
   {
     name: 'LegalLaunch',
     category: 'LegalTech · Individual Capstone',
+    summary: 'A career access platform helping recent law graduates gain practical experience and mentor-backed opportunities.',
+    href: '/earlier-work#legallaunch',
   },
   {
     name: 'HealthHub',
-    category: 'Remote Wellness · Group Product Project',
+    category: 'Remote Wellness · Group PM Project',
+    summary: 'A wellness product concept focused on supporting remote workers through research, persona work, flows, and product documentation.',
+    href: '/earlier-work#healthhub',
   },
 ]
 
 export default function EarlierWork() {
   return (
-    <section className="section-spacing bg-white border-t border-grey-secondary/10">
+    <section className="section-spacing section-surface border-t warm-divider">
       <div className="container-wide">
-        {/* Section Header */}
         <div className="mb-12 md:mb-16">
-          <h2 className="heading-section mb-6">Earlier Product Work</h2>
+          <p className="eyebrow mb-6">Earlier Product Work</p>
+          <h2 className="heading-section mb-6">Additional product thinking</h2>
           <p className="body-secondary max-w-2xl">
-            Earlier explorations that helped shape my product thinking.
+            Smaller but important product explorations that shaped how I approach discovery, problem framing, and user-centred product design.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {earlierProjects.map((project) => (
-            <div
+            <Link
               key={project.name}
-              className="border border-grey-secondary/10 p-6 md:p-8 hover:border-burgundy/30 transition-all duration-300"
+              href={project.href}
+              className="group premium-card block p-6 md:p-8"
             >
-              {/* Project Name */}
-              <h3 className="heading-card mb-3 md:mb-4">
-                {project.name}
-              </h3>
-
-              {/* Category */}
-              <p className="body-small text-grey-secondary">
-                {project.category}
-              </p>
-            </div>
+              <p className="body-small text-grey-secondary mb-3 md:mb-4 uppercase tracking-wide">{project.category}</p>
+              <h3 className="heading-card mb-4 md:mb-5 group-hover:text-burgundy transition-colors duration-200">{project.name}</h3>
+              <p className="body-default text-grey-secondary">{project.summary}</p>
+            </Link>
           ))}
         </div>
       </div>

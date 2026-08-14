@@ -14,7 +14,7 @@ export default function CaseStudyHero({
   description,
 }: CaseStudyHeroProps) {
   return (
-    <section className="section-spacing bg-ivory border-b border-grey-secondary/10">
+    <section className="section-spacing hero-atmosphere case-hero border-b warm-divider">
       <div className="container-wide">
         <Link
           href="/#work"

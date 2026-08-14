@@ -1,0 +1,243 @@
+.hero {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.75rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 42%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 242, 0.95) 38%, rgba(248, 234, 224, 0.92) 72%, rgba(244, 225, 213, 0.95) 100%);
+}
+
+.panel {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(54rem, calc(100svh - 6.75rem), 62rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: clamp(1.75rem, 3vw, 2.75rem);
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 20px 80px rgba(82, 7, 19, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 0 60px rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+.panel::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  width: 48rem;
+  height: 48rem;
+  top: -18rem;
+  right: -8rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.58), rgba(235, 207, 197, 0.12) 46%, transparent 72%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.curves {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.eyebrow {
+  margin-bottom: clamp(2.8rem, 4vw, 3.5rem);
+  color: #7a0c20;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 3.1rem;
+  height: 2px;
+  margin-top: 1.35rem;
+  border-radius: 9999px;
+  background: #981b32;
+}
+
+.heading {
+  max-width: 58rem;
+  margin: 0 0 clamp(2rem, 3vw, 2.75rem);
+  color: #171313;
+  font-size: clamp(3.5rem, 5.9vw, 5.6rem);
+  font-weight: 750;
+  letter-spacing: -0.052em;
+  line-height: 0.98;
+}
+
+.heading span,
+.supportingCopy span {
+  display: block;
+}
+
+.supportingCopy {
+  max-width: 57rem;
+  margin: 0 0 clamp(3rem, 4.2vw, 4rem);
+  color: #706765;
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.9rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.75rem;
+  border-radius: 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.primaryButton {
+  min-width: 18.25rem;
+  gap: 1.35rem;
+  color: #fff8f2;
+  background: linear-gradient(135deg, #520713 0%, #7a0c20 55%, #981b32 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 10px 28px rgba(82, 7, 19, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.secondaryButton {
+  min-width: 15rem;
+  gap: 1.15rem;
+  color: #171313;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(122, 12, 32, 0.14);
+  box-shadow:
+    0 8px 24px rgba(82, 7, 19, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+}
+
+.secondaryButton svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:hover {
+  box-shadow:
+    0 13px 32px rgba(82, 7, 19, 0.21),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.secondaryButton:hover {
+  border-color: rgba(122, 12, 32, 0.28);
+  box-shadow: 0 10px 28px rgba(82, 7, 19, 0.09);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid #7a0c20;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 0.7rem;
+  }
+
+  .panel {
+    min-height: 46rem;
+    align-items: flex-start;
+    padding-top: 3.2rem;
+    border-radius: 1.5rem;
+  }
+
+  .content {
+    padding-top: 0;
+    padding-bottom: 7rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 2.5rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+  }
+
+  .eyebrow::after {
+    width: 2.7rem;
+    margin-top: 1rem;
+  }
+
+  .heading {
+    margin-bottom: 1.8rem;
+    font-size: clamp(2.35rem, 10.5vw, 3.35rem);
+    line-height: 1.04;
+  }
+
+  .heading span,
+  .supportingCopy span {
+    display: inline;
+  }
+
+  .heading span::after,
+  .supportingCopy span::after {
+    content: ' ';
+  }
+
+  .supportingCopy {
+    margin-bottom: 2.4rem;
+    font-size: 1.05rem;
+    line-height: 1.62;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    min-width: 0;
+    min-height: 3.65rem;
+    font-size: 1rem;
+  }
+
+  .curves {
+    width: 145%;
+    height: 52%;
+    inset: auto -18% 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+  }
+}

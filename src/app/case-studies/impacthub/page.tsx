@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import CaseStudyHero from '@/components/CaseStudyHero'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
@@ -9,7 +8,70 @@ import VisualPlaceholder from '@/components/VisualPlaceholder'
 
 export const metadata = {
   title: 'ImpactHub Case Study | Chisom Ayogu',
-  description: 'Cross-Functional Product Leadership: Leading a multidisciplinary team to build a volunteer management and impact verification platform for NGOs.',
+  description: 'Cross-functional product leadership for a CivicTech volunteer-management and impact-verification platform.',
+}
+
+const capabilityTags = ['Product Discovery', 'Cross-Functional Leadership', 'Jira', 'Stakeholder Management', 'User Journeys', 'Conflict Resolution']
+
+const ngoCapabilities = [
+  'Register and verify their organisation', 'Publish volunteer opportunities', 'Review applications', 'Approve volunteers',
+  'Verify contributions', 'Record service hours', 'Issue digital certificates', 'View basic reports',
+]
+
+const volunteerCapabilities = [
+  'Register', 'Create profiles', 'Discover opportunities', 'Apply', 'Participate', 'Submit evidence',
+  'Receive verified service records', 'Receive certificates', 'Build a Verified Impact Profile',
+]
+
+const researchInsights = [
+  'NGOs relied heavily on disconnected manual tools', 'Volunteers valued verified contribution history',
+  'Digital certificates were important', 'Centralised volunteer management could reduce administrative friction',
+  'Impact verification was more valuable than simply creating another volunteer listing platform',
+]
+
+const leadershipResponsibilities = [
+  'Organising meetings', 'Facilitating meetings', 'Coordinating all tracks', 'Spearheading research',
+  'Designing user journeys', 'Designing user flows', 'Collaborating with Product Designers',
+  'Following up with Frontend Developers', 'Following up with Backend Developers',
+  'Coordinating Mobile Development', 'Coordinating Technical Writers', 'Setting up Jira',
+  'Managing the Jira board', 'Assigning tasks', 'Tracking progress', 'Monitoring dependencies',
+  'Managing deliverables across tracks', 'Communicating product decisions', 'Resolving conflicts',
+  'Communicating with bootcamp stakeholders who acted as investors', 'Participating in the final pitch',
+]
+
+const conflictExamples = [
+  { title: 'Frontend vs Backend', copy: 'There was disagreement over a non-working API endpoint. I facilitated discussion, clarified the dependency, and kept the conversation focused on resolution rather than blame.' },
+  { title: 'Product vs Design', copy: 'Product Management created low-fidelity wireframes, user flows, and user journeys to guide design. Important platform-administration requirements were overlooked during design, creating downstream problems across Product, Design, Frontend, and Mobile. I coordinated clarification and re-alignment.' },
+  { title: 'Design vs Frontend', copy: 'There were discrepancies between approved Figma designs and implementation. I helped bring the discussion back to documented requirements and intended user experience.' },
+  { title: 'Demo / Prototype Gaps', copy: 'During review, missing interface elements were discovered. This required further coordination across Design, Backend, Frontend, and Mobile.' },
+  { title: 'Mobile Resource Constraint', copy: 'Only one Mobile Developer was available under the one-month deadline. I had to prioritise critical flows and manage dependencies carefully.' },
+  { title: 'Product Management vs Technical Writing', copy: 'There were disagreements around PRD scope and documentation expectations. These were resolved through discussion and alignment.' },
+]
+
+const lessons = [
+  'Cross-functional leadership requires clarity', 'Dependencies matter as much as individual tasks',
+  'Conflict should be resolved around product goals, not personalities',
+  'Product leadership often depends on influence rather than authority',
+  'Strong communication changes depending on the audience',
+  'Delivery requires constant alignment, not one-time handoff',
+]
+
+const skills = [
+  'Cross-Functional Leadership', 'Product Discovery', 'Product Strategy', 'Jira Management', 'Stakeholder Management',
+  'Conflict Resolution', 'User Journey Design', 'Requirements Management', 'Resource Management', 'Facilitation',
+  'Presentation', 'Problem Solving', 'Collaboration', 'Proactiveness',
+]
+
+function BulletList({ items }: { items: string[] }) {
+  return <ul className="space-y-3">{items.map((item) => <li key={item} className="body-default text-grey-secondary flex gap-3"><span className="text-burgundy" aria-hidden="true">•</span><span>{item}</span></li>)}</ul>
+}
+
+function Flow({ steps }: { steps: string[] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-3" aria-label={steps.join(' then ')}>
+      {steps.map((step, index) => <div key={step} className="flex items-center gap-3"><span className="glass-panel rounded-full px-4 py-2 text-sm font-medium text-near-black">{step}</span>{index < steps.length - 1 && <span className="text-burgundy" aria-hidden="true">→</span>}</div>)}
+    </div>
+  )
 }
 
 export default function ImpactHubCaseStudy() {
@@ -17,784 +79,117 @@ export default function ImpactHubCaseStudy() {
     <div className="bg-ivory">
       <Navigation />
 
-      {/* Hero */}
-      <CaseStudyHero
-        title="ImpactHub"
-        positioning="Cross-Functional Product Leadership"
-        industry="CivicTech / Volunteer Management"
-        description="I led a six-person cross-functional team to build a volunteer management and impact verification platform for NGOs. This case study demonstrates how I coordinated product, design, and engineering teams under tight constraints."
-      />
-
-      {/* Project Snapshot */}
-      <ProjectSnapshot
-        items={[
-          { label: 'My Role', value: 'Team Lead & PM' },
-          { label: 'Team Size', value: '6 people' },
-          { label: 'Timeline', value: '1 month' },
-          { label: 'Project Type', value: 'Cross-Track Capstone' },
-        ]}
-      />
-
-      {/* The Problem */}
-      <CaseStudySection title="The Problem" backgroundLight>
+      <section className="section-spacing hero-atmosphere case-hero border-b warm-divider">
         <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            NGOs managing volunteers faced a fragmented ecosystem of disconnected tools. The central challenge was not just inefficiency—it was a lack of trust and verifiable proof.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
+          <Link href="/#work" className="inline-flex items-center gap-2 body-small text-grey-secondary hover:text-burgundy transition-colors duration-200 mb-8 md:mb-12"><span aria-hidden="true">←</span><span>Back to Work</span></Link>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-end">
             <div>
-              <p className="eyebrow mb-4 md:mb-6 text-burgundy">NGO Challenges</p>
-              <ul className="space-y-3 md:space-y-4">
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Fragmented volunteer records across WhatsApp, spreadsheets, Google Forms, email, and paper</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Inefficient communication with volunteers</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Manual attendance tracking and contribution verification</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Delayed reporting and weak impact visibility</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="eyebrow mb-4 md:mb-6 text-burgundy">Volunteer Challenges</p>
-              <ul className="space-y-3 md:space-y-4">
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Difficulty finding suitable opportunities</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>No maintained record of contributions</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>Unable to receive certificates or proof of impact</span>
-                </li>
-                <li className="body-default text-grey-secondary flex gap-3">
-                  <span className="text-burgundy">•</span>
-                  <span>No portable evidence for résumés or employment</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <InsightCard highlighted>
-            <p className="text-2xl md:text-3xl font-bold text-near-black">
-              NGOs struggled to manage and prove impact. Volunteers struggled to maintain trusted evidence of the impact they created.
-            </p>
-          </InsightCard>
-        </div>
-      </CaseStudySection>
-
-      {/* Research & Discovery */}
-      <CaseStudySection title="Research & Discovery">
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-14">
-            I spearheaded comprehensive research to validate the problem and identify the opportunity. This wasn&apos;t just about solving a pain point—it was about understanding where the market was moving.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
-            <InsightCard label="Research Methods">
-              <ul className="space-y-4">
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Volunteer Surveys</span>
-                  <p className="text-sm mt-1">Understanding how volunteers track and share their contributions</p>
-                </li>
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">NGO Interviews</span>
-                  <p className="text-sm mt-1">Learning how organizations currently manage volunteer programs</p>
-                </li>
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Competitor Analysis</span>
-                  <p className="text-sm mt-1">Mapping existing volunteer platforms and their limitations</p>
-                </li>
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Industry Research</span>
-                  <p className="text-sm mt-1">Exploring trends in social impact and digital verification</p>
-                </li>
-              </ul>
-            </InsightCard>
-
-            <InsightCard label="Key Insights">
-              <ul className="space-y-4">
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Manual Tools Dominate</span>
-                  <p className="text-sm mt-1">NGOs rely heavily on WhatsApp, spreadsheets, and paper-based systems</p>
-                </li>
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Verification Matters</span>
-                  <p className="text-sm mt-1">Volunteers value verified contribution history over unvalidated claims</p>
-                </li>
-                <li className="body-default text-grey-secondary">
-                  <span className="font-medium text-near-black">Measurable Impact</span>
-                  <p className="text-sm mt-1">Centralization and proof of impact matter more than listing platforms</p>
-                </li>
-              </ul>
-            </InsightCard>
-          </div>
-
-          <VisualPlaceholder label="Research Artefacts (Surveys, Interview Notes, Competitive Matrix)" />
-        </div>
-      </CaseStudySection>
-
-      {/* Key Product Insight */}
-      <CaseStudySection title="Key Product Insight" backgroundLight>
-        <div className="container-wide max-w-3xl">
-          <p className="eyebrow mb-6 md:mb-8">The Opportunity</p>
-          <p className="text-3xl md:text-4xl font-bold text-near-black mb-8 md:mb-10">
-            Build trust through verification, not just convenience.
-          </p>
-          <p className="body-large text-grey-secondary">
-            The market was crowded with volunteer listing platforms. But no one was solving the deeper problem: how to create a trusted, verified record of impact that both NGOs and volunteers could rely on. That became our competitive advantage.
-          </p>
-        </div>
-      </CaseStudySection>
-
-      {/* My Role */}
-      <CaseStudySection title="My Role as Team Lead">
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-14">
-            I was not a PM among engineers. I was the lead for the entire cross-functional project, responsible for coordinating product, design, frontend, backend, mobile, and technical writing teams. This meant wearing multiple hats:
-          </p>
-
-          <div className="space-y-8 md:space-y-10">
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Product Strategy</p>
-              <p className="body-default text-grey-secondary">Conducted research, defined the product direction, created user journeys and flows, and managed product requirements across the entire project.</p>
-            </div>
-
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Cross-Functional Coordination</p>
-              <p className="body-default text-grey-secondary">Organized and facilitated meetings, coordinated deliverables across all tracks, assigned tasks in Jira, and monitored dependencies.</p>
-            </div>
-
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Design Partnership</p>
-              <p className="body-default text-grey-secondary">Worked closely with Product Designers, translating requirements into user flows and wireframes, and feeding back on design fidelity.</p>
-            </div>
-
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Engineering Oversight</p>
-              <p className="body-default text-grey-secondary">Followed up with Frontend, Backend, and Mobile developers on progress, unblocked dependencies, and escalated critical issues.</p>
-            </div>
-
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Delivery Management</p>
-              <p className="body-default text-grey-secondary">Set up Jira, created the delivery structure, tracked progress daily, and managed scope under a one-month deadline.</p>
-            </div>
-
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3">Stakeholder Communication</p>
-              <p className="body-default text-grey-secondary">Presented to bootcamp stakeholders who acted as investors, pitched the product direction, and communicated progress and challenges.</p>
-            </div>
-          </div>
-        </div>
-      </CaseStudySection>
-
-      {/* Cross-Functional Team */}
-      <CaseStudySection title="The Cross-Functional Team" backgroundLight>
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-14">
-            This project brought together six people across five disciplines. Each brought different expertise, constraints, and priorities. Aligning them around a shared goal was half the work.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { track: 'Product Management', people: '2 people', focus: 'Strategy, research, requirements' },
-              { track: 'Product Design', people: '1 person', focus: 'Figma, wireframes, user flows' },
-              { track: 'Frontend Development', people: '1 person', focus: 'Web interface' },
-              { track: 'Backend Development', people: '1 person', focus: 'APIs, database, verification logic' },
-              { track: 'Mobile Development', people: '1 person', focus: 'iOS/Android app' },
-              { track: 'Technical Writing', people: 'Shared', focus: 'Documentation, PRD' },
-            ].map((item) => (
-              <InsightCard key={item.track} label={item.track}>
-                <p className="heading-card mb-2">{item.people}</p>
-                <p className="body-small text-grey-secondary">{item.focus}</p>
-              </InsightCard>
-            ))}
-          </div>
-
-          <div className="mt-12 md:mt-16">
-            <VisualPlaceholder label="Team Structure & Tracks" aspectRatio="square" />
-          </div>
-        </div>
-      </CaseStudySection>
-
-      {/* Product Strategy */}
-      <CaseStudySection title="Product Strategy: The Volunteer Lifecycle">
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-14">
-            I mapped the entire volunteer journey as a series of product moments. Each step required different product capabilities and cross-team coordination.
-          </p>
-
-          <div className="space-y-6 md:space-y-8">
-            {[
-              {
-                step: '1',
-                phase: 'Discover',
-                description: 'Volunteer finds opportunities through the ImpactHub discovery platform',
-              },
-              {
-                step: '2',
-                phase: 'Apply',
-                description: 'Volunteer submits application to participate in an opportunity',
-              },
-              {
-                step: '3',
-                phase: 'Approve',
-                description: 'NGO reviews and approves volunteer applications',
-              },
-              {
-                step: '4',
-                phase: 'Participate',
-                description: 'Volunteer completes the volunteering activity',
-              },
-              {
-                step: '5',
-                phase: 'Verify',
-                description: 'NGO verifies that the contribution was completed (critical step)',
-              },
-              {
-                step: '6',
-                phase: 'Recognize',
-                description: 'System generates certificate, updates Verified Impact Profile, sends notification',
-              },
-            ].map((item) => (
-              <div
-                key={item.step}
-                className="flex gap-6 md:gap-8 pb-6 md:pb-8 border-b border-grey-secondary/10 last:border-b-0"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-burgundy text-ivory flex items-center justify-center font-semibold text-lg">
-                    {item.step}
-                  </div>
-                </div>
-                <div className="flex-grow pt-1">
-                  <p className="heading-card mb-2">{item.phase}</p>
-                  <p className="body-default text-grey-secondary">{item.description}</p>
-                </div>
+              <p className="eyebrow mb-6 text-burgundy">ImpactHub · Case Study</p>
+              <h1 className="heading-hero mb-6">ImpactHub</h1>
+              <p className="text-2xl md:text-3xl font-bold leading-tight text-near-black mb-6">Leading a cross-functional team to design and deliver a trusted volunteer-management and impact-verification platform.</p>
+              <p className="body-large text-grey-secondary mb-8">ImpactHub was designed to help NGOs recruit, manage, verify, and report volunteer contributions while enabling volunteers to build a trusted record of their service.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                {[
+                  ['Role', 'Cross-Functional Team Lead / Product Manager'], ['Project Type', 'Cross-Track Capstone'],
+                  ['Timeline', '1 Month'], ['Industry', 'CivicTech / Volunteer Management'],
+                ].map(([label, value]) => <div key={label} className="glass-panel rounded-lg p-4"><p className="eyebrow mb-2">{label}</p><p className="text-sm md:text-base font-medium text-near-black">{value}</p></div>)}
               </div>
-            ))}
+              <div className="flex flex-wrap gap-2">{capabilityTags.map((tag) => <span key={tag} className="rounded-full border border-burgundy/15 bg-ivory/70 px-3 py-2 text-xs font-medium text-burgundy">{tag}</span>)}</div>
+            </div>
+            <VisualPlaceholder label="ImpactHub Main Product Image" />
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 md:mt-16">
-            <VisualPlaceholder label="Complete User Journey" />
-          </div>
+      <ProjectSnapshot items={[
+        { label: 'My Role', value: 'Cross-Functional Team Lead / Product Manager' },
+        { label: 'Project Type', value: 'Cross-Track Capstone' }, { label: 'Timeline', value: '1 Month' },
+        { label: 'Portfolio Signal', value: 'Cross-Functional Product Leadership' },
+      ]} />
+
+      <CaseStudySection title="Project Overview" backgroundLight>
+        <div className="container-wide space-y-10">
+          <p className="body-large text-grey-secondary max-w-3xl">ImpactHub is a civic-tech platform designed to support the complete volunteer lifecycle.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="For NGOs"><BulletList items={ngoCapabilities} /></InsightCard><InsightCard label="For Volunteers"><BulletList items={volunteerCapabilities} /></InsightCard></div>
+          <div className="glass-panel rounded-xl p-6 md:p-8"><p className="eyebrow mb-5">Product Lifecycle</p><Flow steps={['NGO creates opportunity', 'Volunteer applies', 'NGO approves', 'Volunteer participates', 'Contribution is verified', 'Certificate is generated', 'Verified Impact Profile is updated']} /></div>
         </div>
       </CaseStudySection>
 
-      {/* MVP Capabilities */}
-      <CaseStudySection title="MVP: Core Capabilities" backgroundLight>
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { category: 'For NGOs', items: ['Organization verification', 'Opportunity creation', 'Volunteer applications', 'Contribution verification', 'Reporting & analytics'] },
-              { category: 'For Volunteers', items: ['Registration & profile', 'Opportunity discovery', 'Applications & status', 'Service hour tracking', 'Digital certificates'] },
-              { category: 'Platform', items: ['Verified Impact Profile', 'Notifications', 'User authentication', 'Mobile & web access', 'Audit trail'] },
-            ].map((section) => (
-              <div key={section.category}>
-                <p className="eyebrow mb-4 md:mb-6 text-burgundy">{section.category}</p>
-                <ul className="space-y-3 md:space-y-4">
-                  {section.items.map((item) => (
-                    <li key={item} className="body-small text-grey-secondary flex gap-2">
-                      <span className="text-burgundy flex-shrink-0">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      <CaseStudySection title="The Problem">
+        <div className="container-wide space-y-8">
+          <p className="body-large text-grey-secondary max-w-3xl">Many NGOs, especially smaller organisations, manage volunteers through fragmented tools such as:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <InsightCard label="Fragmented NGO Tools"><BulletList items={['WhatsApp', 'Spreadsheets', 'Google Forms', 'Email', 'Paper records']} /></InsightCard>
+            <InsightCard label="Resulting Friction"><BulletList items={['Fragmented volunteer information', 'Inefficient communication', 'Manual attendance tracking', 'Difficult contribution verification', 'Delayed reporting', 'Weak visibility into programme impact']} /></InsightCard>
           </div>
+          <InsightCard label="Highlighted Problem" highlighted><p className="text-2xl md:text-3xl font-bold leading-snug text-near-black">“NGOs struggled to manage and prove impact, while volunteers struggled to maintain trusted evidence of the impact they created.”</p></InsightCard>
+          <InsightCard label="Volunteer Challenges"><BulletList items={['Discover opportunities', 'Maintain service records', 'Receive certificates', 'Prove their contribution', 'Communicate volunteer experience to employers, schools, and programmes']} /></InsightCard>
         </div>
       </CaseStudySection>
 
-      {/* Verification Before Recognition - Key Decision */}
-      <CaseStudySection title="Verification Before Recognition">
-        <div className="container-wide">
-          <InsightCard highlighted>
-            <p className="eyebrow mb-4 md:mb-6 text-burgundy">Core Product Decision</p>
-            <p className="text-2xl md:text-3xl font-bold text-near-black mb-6 md:mb-8">
-              Recognition follows verification.
-            </p>
-            <p className="body-large text-grey-secondary mb-8 md:mb-10">
-              A volunteer should not receive a certificate or verified impact record merely because they claim to have completed an activity. The NGO must verify the contribution first. Verification is not optional—it is the foundation of trust.
-            </p>
-            <p className="body-default text-grey-secondary font-medium">After NGO Verification:</p>
-            <ol className="space-y-3 mt-4 md:mt-6">
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">1.</span>
-                <span>Service hours are recorded in volunteer profile</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">2.</span>
-                <span>Unique certificate ID is generated</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">3.</span>
-                <span>Digital certificate is created and downloadable</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">4.</span>
-                <span>Verified Impact Profile is updated</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">5.</span>
-                <span>Volunteer is notified of certification</span>
-              </li>
-            </ol>
-          </InsightCard>
-
-          <div className="mt-12 md:mt-16">
-            <VisualPlaceholder label="Verification Workflow Diagram" aspectRatio="video" />
-          </div>
+      <CaseStudySection title="Research & Discovery" backgroundLight>
+        <div className="container-wide space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="I Spearheaded"><BulletList items={['Market analysis', 'User research', 'Competitor analysis', 'Broader product research']} /></InsightCard><InsightCard label="Team Research"><BulletList items={['Volunteer surveys', 'NGO surveys', 'Competitor analysis', 'Industry research']} /></InsightCard></div>
+          <InsightCard label="Key Insights"><BulletList items={researchInsights} /></InsightCard>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6"><VisualPlaceholder label="Survey Findings" /><VisualPlaceholder label="Competitor Analysis" /><VisualPlaceholder label="Research Notes" /></div>
         </div>
       </CaseStudySection>
 
-      {/* Jira & Delivery Management */}
+      <CaseStudySection title="Key Product Insight"><div className="container-wide"><InsightCard highlighted><p className="text-3xl md:text-4xl font-bold leading-tight text-near-black">“Volunteer participation alone was not enough. The product needed to turn participation into verified evidence of impact.”</p></InsightCard></div></CaseStudySection>
+
+      <CaseStudySection title="My Role & Leadership" backgroundLight>
+        <div className="container-wide space-y-8">
+          <p className="body-large text-near-black font-medium">I served as the overall Team Lead for the entire cross-functional capstone.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6"><InsightCard label="Leadership Responsibilities"><BulletList items={leadershipResponsibilities} /></InsightCard><div className="space-y-6"><InsightCard label="Cross-Functional Team Structure" highlighted><Flow steps={['Team Lead / Product Manager', 'Product', 'Design', 'Frontend', 'Backend', 'Mobile', 'Technical Writing']} /></InsightCard><VisualPlaceholder label="Cross-Functional Team Structure" /></div></div>
+        </div>
+      </CaseStudySection>
+
+      <CaseStudySection title="Product Strategy">
+        <div className="container-wide space-y-8">
+          <InsightCard label="Vision" highlighted><p className="heading-card">Create a trusted civic-tech platform for managing volunteers, verifying contributions, and measuring community impact.</p></InsightCard>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="Value for NGOs"><BulletList items={['Centralise volunteer records', 'Recruit volunteers', 'Verify contributions', 'Improve reporting', 'Reduce administrative work', 'Demonstrate programme impact']} /></InsightCard><InsightCard label="Value for Volunteers"><BulletList items={['Discover opportunities', 'Build verified service history', 'Receive certificates', 'Maintain portable contribution evidence']} /></InsightCard></div>
+        </div>
+      </CaseStudySection>
+
+      <CaseStudySection title="MVP" backgroundLight>
+        <div className="container-wide grid grid-cols-1 md:grid-cols-3 gap-6"><InsightCard label="NGO MVP"><BulletList items={['Registration', 'Organisation verification', 'Opportunity creation', 'Application review', 'Volunteer approval', 'Contribution verification', 'Service-hour recording', 'Digital certificates', 'Basic reporting']} /></InsightCard><InsightCard label="Volunteer MVP"><BulletList items={['Registration', 'Profile', 'Opportunity discovery', 'Applications', 'Participation', 'Evidence submission', 'Verification', 'Certificates', 'Verified Impact Profile']} /></InsightCard><InsightCard label="Deferred"><BulletList items={['AI recommendations', 'Employer portal', 'Donations', 'Leaderboards', 'Social networking', 'Advanced analytics', 'Third-party integrations']} /></InsightCard></div>
+      </CaseStudySection>
+
+      <CaseStudySection title="User Journeys">
+        <div className="container-wide space-y-8"><InsightCard label="NGO Journey"><Flow steps={['Register', 'Organisation Profile', 'Verification', 'Create Opportunity', 'Publish', 'Review Applications', 'Approve', 'Verify Contributions', 'Generate Certificates', 'View Reports']} /></InsightCard><InsightCard label="Volunteer Journey"><Flow steps={['Register', 'Complete Profile', 'Browse Opportunities', 'Apply', 'Track Application', 'Participate', 'Submit Evidence', 'Receive Verification', 'Receive Certificate', 'View Impact Profile']} /></InsightCard><VisualPlaceholder label="ImpactHub User Flows" /></div>
+      </CaseStudySection>
+
+      <CaseStudySection title="Verification Before Recognition" backgroundLight>
+        <div className="container-wide space-y-8"><p className="body-large text-grey-secondary max-w-3xl">A volunteer should not receive a certificate or verified impact record simply because they claim to have completed an activity. The NGO first verifies the contribution.</p><InsightCard highlighted><p className="text-3xl md:text-4xl font-bold text-near-black">“Recognition follows verification.”</p></InsightCard><Flow steps={['Service hours are recorded', 'Certificate ID is generated', 'Digital certificate is created', 'Verified Impact Profile is updated', 'Volunteer is notified']} /></div>
+      </CaseStudySection>
+
+      <CaseStudySection title="North Star Metric">
+        <div className="container-wide"><InsightCard label="North Star Metric" highlighted><p className="text-3xl md:text-4xl font-bold text-near-black mb-5">Verified Volunteer Contributions</p><p className="body-large text-grey-secondary mb-6">The total number of volunteer activities successfully completed and verified by NGOs.</p><p className="body-default text-near-black font-medium mb-4">Registrations alone do not prove value. A verified contribution means:</p><BulletList items={['A real opportunity existed', 'A volunteer participated', 'The activity was completed', 'The NGO confirmed the contribution']} /></InsightCard></div>
+      </CaseStudySection>
+
       <CaseStudySection title="Jira & Delivery Management" backgroundLight>
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            With six people and a one-month deadline, delivery management was critical. I set up Jira to create visibility across all functional tracks.
-          </p>
-
-          <div className="space-y-8 md:space-y-10 mb-12 md:mb-16">
-            <InsightCard label="Delivery Structure">
-              <p className="body-default text-grey-secondary mb-6">
-                I organized Jira around functional tracks, not just features. This allowed each team to own their deliverables while surfacing cross-team dependencies.
-              </p>
-              <ul className="space-y-3">
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Product Track:</span> Research, strategy, requirements, user journeys
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Design Track:</span> Wireframes, high-fidelity designs, design system
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Backend Track:</span> APIs, database schema, verification logic
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Frontend Track:</span> Web interface, integration with backend
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Mobile Track:</span> iOS/Android app, parity with web
-                </li>
-              </ul>
-            </InsightCard>
-
-            <InsightCard label="Dependency Management">
-              <p className="body-default text-grey-secondary mb-6">
-                Not all tasks could run in parallel. Design had to start before Frontend. Backend APIs had to be defined before Frontend and Mobile could build.
-              </p>
-              <p className="body-small text-grey-secondary mb-4">
-                I mapped critical dependencies and sequenced work accordingly. When one team got blocked, I escalated immediately.
-              </p>
-              <p className="body-small text-grey-secondary font-medium">
-                Example: Frontend was blocked waiting for Backend API spec. I facilitated a synchronous meeting to unblock the dependency rather than letting it delay the project.
-              </p>
-            </InsightCard>
-          </div>
-
-          <VisualPlaceholder label="Jira Board Screenshot (Delivery Structure & Progress)" />
-        </div>
+        <div className="container-wide space-y-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"><InsightCard label="Delivery Leadership"><BulletList items={['Set up the Jira board', 'Created delivery structure', 'Assigned work', 'Monitored status', 'Followed up on incomplete work', 'Tracked dependencies', 'Coordinated cross-track deliverables']} /></InsightCard><VisualPlaceholder label="Jira Board Screenshot" /></div><InsightCard label="Delivery Flow"><Flow steps={['Discovery', 'Design', 'Development', 'Testing', 'Demo / Pitch']} /></InsightCard></div>
       </CaseStudySection>
 
-      {/* Conflict Management */}
-      <CaseStudySection title="Conflict Management: 6 Real Scenarios">
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            Six people working under pressure will have disagreements. My approach was never to decide who was &quot;right.&quot; Instead, I brought conversations back to user need, documented requirements, technical dependencies, and our shared deadline.
-          </p>
+      <CaseStudySection title="Conflict Management"><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6">{conflictExamples.map((example) => <InsightCard key={example.title} label={example.title}><p className="body-default text-grey-secondary">{example.copy}</p></InsightCard>)}</div></CaseStudySection>
 
-          <div className="space-y-8 md:space-y-10 mb-12 md:mb-16">
-            {/* Conflict 1 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Frontend vs Backend: Non-Working API Endpoint</p>
-              <p className="body-default text-grey-secondary mb-4">
-                Frontend developer discovered that a critical API endpoint was not working as documented. Backend developer believed it was working correctly. Tension rose quickly.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                I facilitated a synchronous debugging session rather than letting blame fly. We discovered the API was correct but the Frontend integration was off. Resolution: corrected the integration. Focus: the shared goal (working feature), not who was wrong.
-              </p>
-            </div>
+      <CaseStudySection title="Conflict Management Principle" backgroundLight><div className="container-wide"><InsightCard highlighted><p className="text-2xl md:text-3xl font-bold leading-snug text-near-black">“My approach was to bring cross-functional disagreements back to the user need, product requirement, ownership, dependency, delivery constraint, and shared product goal.”</p></InsightCard></div></CaseStudySection>
 
-            {/* Conflict 2 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Product vs Design: Platform Admin Requirements</p>
-              <p className="body-default text-grey-secondary mb-4">
-                The Product team created low-fidelity wireframes and user flows. During design handoff, important platform-administration requirements were missing. This created downstream discrepancies in Design, Frontend, and Mobile.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                Rather than blaming Product for incomplete requirements, I coordinated a synchronous clarification meeting with all stakeholders. We documented missing requirements, updated wireframes, and cascaded changes to Figma and all engineering tracks.
-              </p>
-            </div>
-
-            {/* Conflict 3 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Design vs Frontend: Figma vs Implementation</p>
-              <p className="body-default text-grey-secondary mb-4">
-                Frontend implementation had subtle but important differences from the approved Figma designs. Designer felt their work was not being respected. Frontend developer felt the design was over-specifying details.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                I brought the conversation back to documented product requirements and user needs. Some differences were cosmetic (acceptable). Others were functional (must match design). We aligned on a clear decision framework for future decisions.
-              </p>
-            </div>
-
-            {/* Conflict 4 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Prototype Gaps: Missing Interface Elements</p>
-              <p className="body-default text-grey-secondary mb-4">
-                During the first end-to-end demo, several interface elements were discovered to be missing or incomplete. This required urgent coordination across Design, Frontend, Backend, and Mobile.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                I created a gap list, prioritized by criticality to the demo, and coordinated fixes across teams. Some gaps required extending the deadline slightly; others were reduced in scope. Clear ownership and communication prevented panic.
-              </p>
-            </div>
-
-            {/* Conflict 5 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Mobile Resource Constraint: Only One Developer</p>
-              <p className="body-default text-grey-secondary mb-4">
-                The Mobile team was one developer working under the same one-month deadline. Scope creep would crush this single point of failure. Multiple teams wanted mobile features that weren&apos;t in the MVP.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                I protected the Mobile developer&apos;s scope ruthlessly. Any new request was evaluated against the MVP requirements and the one-month deadline. This felt harsh but prevented overcommitment and ensured delivery.
-              </p>
-            </div>
-
-            {/* Conflict 6 */}
-            <div className="border-l-4 border-burgundy pl-6 md:pl-8">
-              <p className="heading-card mb-3 text-burgundy">Product Management vs Technical Writing: PRD Scope</p>
-              <p className="body-default text-grey-secondary mb-4">
-                Product team created a detailed PRD. Technical Writing team felt it was too long and had misaligned documentation. Disagreement about what belonged in the PRD vs. separate docs.
-              </p>
-              <p className="body-small text-burgundy font-medium mb-2">My approach:</p>
-              <p className="body-small text-grey-secondary">
-                I facilitated alignment on documentation structure. PRD became the source of truth for requirements. A separate design doc handled implementation details. Both teams owned their parts with clear boundaries.
-              </p>
-            </div>
-          </div>
-
-          <InsightCard>
-            <p className="eyebrow mb-4 md:mb-6 text-burgundy">Conflict Resolution Framework</p>
-            <p className="body-default text-grey-secondary mb-6">
-              Conflict management in product teams is not always about deciding who is right. My approach was to bring conversations back to:
-            </p>
-            <ul className="space-y-3">
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">User need:</span> What does the user actually need?</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">Documented requirements:</span> What did we agree to build?</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">Technical dependencies:</span> What must happen first?</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">Ownership:</span> Who owns this decision?</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">Constraints:</span> What are our deadlines and resources?</span>
-              </li>
-              <li className="body-small text-grey-secondary flex gap-3">
-                <span className="text-burgundy font-bold flex-shrink-0">→</span>
-                <span><span className="font-medium">Shared goal:</span> Are we all trying to ship a great product?</span>
-              </li>
-            </ul>
-          </InsightCard>
-        </div>
+      <CaseStudySection title="Stakeholder Management & Pitch">
+        <div className="container-wide space-y-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"><InsightCard label="Stakeholder Leadership"><p className="body-default text-grey-secondary mb-5">The bootcamp stakeholders acted as investors.</p><BulletList items={['Communicated with stakeholders', 'Represented the product', 'Contributed to the final pitch', 'Communicated the problem', 'Explained the value proposition', 'Supported the product story', 'Explained product direction']} /></InsightCard><VisualPlaceholder label="Pitch Artefacts" /></div><InsightCard label="Communication Lesson" highlighted><p className="heading-card mb-5">Different audiences need different product communication.</p><BulletList items={['Engineers need implementation clarity', 'Designers need experience context', 'Stakeholders need problem, value, viability, and direction']} /></InsightCard></div>
       </CaseStudySection>
 
-      {/* Stakeholder Management & Pitching */}
-      <CaseStudySection title="Stakeholder Management & Pitching" backgroundLight>
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            The bootcamp stakeholders acted as investors and decision-makers. I was responsible for keeping them informed, managing expectations, and ultimately pitching the product direction.
-          </p>
+      <CaseStudySection title="Constraints" backgroundLight><div className="container-wide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{['One-month delivery deadline', 'Uneven team resources', 'Only one Mobile Developer', 'Cross-functional dependencies', 'MVP scope limitations', 'Limited access to real users for usability testing'].map((constraint) => <div key={constraint} className="premium-card p-6"><p className="heading-card">{constraint}</p></div>)}</div></CaseStudySection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
-            <InsightCard label="Communication Approach">
-              <p className="body-default text-grey-secondary mb-6">
-                I communicated differently to different audiences. Each needed a different framing:
-              </p>
-              <ul className="space-y-4">
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Engineers:</span> Technical requirements, API specs, dependencies
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Designers:</span> User flows, personas, design principles
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Internal team:</span> Progress, blockers, next steps
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Stakeholder-investors:</span> Problem, opportunity, proof of concept
-                </li>
-              </ul>
-            </InsightCard>
-
-            <InsightCard label="Pitching the Product">
-              <p className="body-default text-grey-secondary mb-6">
-                I participated in the final pitch to stakeholders. The narrative had to work:
-              </p>
-              <ul className="space-y-4">
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Problem:</span> NGOs can&apos;t manage volunteer impact
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Opportunity:</span> Centralized, verified impact platform
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Product:</span> End-to-end lifecycle from discovery to certificate
-                </li>
-                <li className="body-small text-grey-secondary">
-                  <span className="font-medium text-near-black">Proof:</span> Working prototype demonstrated all core capabilities
-                </li>
-              </ul>
-            </InsightCard>
-          </div>
-
-          <VisualPlaceholder label="Pitch Deck or Presentation Artefact" />
-        </div>
+      <CaseStudySection title="Outcome">
+        <div className="container-wide space-y-8"><InsightCard label="Capstone Outcome" highlighted><p className="body-large text-near-black mb-6">ImpactHub was developed and presented as a cross-track capstone.</p><BulletList items={['Research-backed product direction', 'Personas', 'Target users', 'MVP definition', 'Product strategy', 'User journeys', 'User flows', 'Prioritisation', 'Requirements', 'Product documentation', 'Figma designs', 'Jira-managed delivery', 'Cross-functional implementation work', 'Product demonstration', 'Stakeholder pitch']} /></InsightCard><div className="grid grid-cols-1 md:grid-cols-3 gap-6"><VisualPlaceholder label="Figma Designs" /><VisualPlaceholder label="Product Screens" /><VisualPlaceholder label="Product Demo" /></div></div>
       </CaseStudySection>
 
-      {/* Constraints */}
-      <CaseStudySection title="Constraints & Reality">
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            This project was real, not theoretical. We operated under significant constraints that shaped every decision.
-          </p>
+      <CaseStudySection title="What I Learned" backgroundLight><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6">{lessons.map((lesson, index) => <div key={lesson} className="premium-card p-6 flex gap-4"><span className="w-9 h-9 flex-shrink-0 rounded-full bg-burgundy text-ivory flex items-center justify-center font-semibold">{index + 1}</span><p className="heading-card">{lesson}</p></div>)}</div></CaseStudySection>
 
-          <div className="space-y-6 md:space-y-8">
-            {[
-              {
-                constraint: 'One-Month Deadline',
-                impact: 'Ruthless scope discipline. MVP-only features. No nice-to-haves. Parallel workstreams were essential.',
-              },
-              {
-                constraint: 'Uneven Resource Allocation',
-                impact: 'Product had 2 people. Design and most engineering had 1 person each. Required careful dependency mapping.',
-              },
-              {
-                constraint: 'Single Mobile Developer',
-                impact: 'Mobile was our bottleneck. I protected this person&apos;s scope fiercely. Some features were web-only in MVP.',
-              },
-              {
-                constraint: 'Limited User Testing',
-                impact: 'We couldn&apos;t conduct extensive usability testing. Validation came from research, not live users.',
-              },
-              {
-                constraint: 'No Production Launch',
-                impact: 'This was a capstone, not a commercial product. The goal was proof of concept and product leadership demonstration.',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="border-t border-grey-secondary/10 pt-6 md:pt-8 first:border-t-0 first:pt-0">
-                <p className="heading-card mb-3 text-burgundy">{item.constraint}</p>
-                <p className="body-default text-grey-secondary">{item.impact}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </CaseStudySection>
+      <CaseStudySection title="Skills Demonstrated"><div className="container-wide flex flex-wrap gap-3">{skills.map((skill) => <span key={skill} className="glass-panel rounded-full px-4 py-2 text-sm font-medium text-burgundy">{skill}</span>)}</div></CaseStudySection>
 
-      {/* Outcome */}
-      <CaseStudySection title="Outcome" backgroundLight>
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            ImpactHub was developed as a cross-track capstone and delivered within one month. While this was not a commercial launch, the project produced comprehensive work across product, design, and engineering.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {[
-              {
-                category: 'Product Artefacts',
-                items: [
-                  'Research-backed product direction',
-                  'Detailed user personas',
-                  'End-to-end user journeys',
-                  'User flow diagrams',
-                  'Prioritized requirements',
-                  'Detailed PRD documentation',
-                ],
-              },
-              {
-                category: 'Design & Implementation',
-                items: [
-                  'Figma design system',
-                  'High-fidelity mockups',
-                  'Web interface (Frontend)',
-                  'Backend APIs & database',
-                  'Mobile app (iOS/Android)',
-                  'Working product demo',
-                ],
-              },
-              {
-                category: 'Delivery & Leadership',
-                items: [
-                  'Jira-managed delivery structure',
-                  'Cross-functional coordination',
-                  'Dependency tracking',
-                  'Daily progress monitoring',
-                  'Stakeholder presentations',
-                  'Pitch deck & demo',
-                ],
-              },
-              {
-                category: 'Key Outcome',
-                items: [
-                  'Delivered on a one-month deadline',
-                  'Six-person team coordinated end-to-end',
-                  'Zero critical scope slippages',
-                  'Working prototype demonstrated all MVP capabilities',
-                  'Stakeholder buy-in on product direction',
-                  'Proof of cross-functional leadership',
-                ],
-              },
-            ].map((section) => (
-              <div key={section.category}>
-                <p className="eyebrow mb-4 md:mb-6 text-burgundy">{section.category}</p>
-                <ul className="space-y-3 md:space-y-4">
-                  {section.items.map((item) => (
-                    <li key={item} className="body-small text-grey-secondary flex gap-2">
-                      <span className="text-burgundy flex-shrink-0">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 md:mt-16">
-            <VisualPlaceholder label="Product Demo Screenshot or Demo Video" />
-          </div>
-        </div>
-      </CaseStudySection>
-
-      {/* What I Learned */}
-      <CaseStudySection title="What I Learned">
-        <div className="container-wide">
-          <div className="space-y-8 md:space-y-10">
-            {[
-              {
-                lesson: 'Cross-Functional Leadership Requires Clarity',
-                insight:
-                  'With six people working toward a shared goal, ambiguity creates chaos. Clear requirements, clear ownership, clear deadlines—these are non-negotiable. Write it down. Make it visible. Update it when it changes.',
-              },
-              {
-                lesson: 'Trust Can Be Designed Into Workflows',
-                insight:
-                  'ImpactHub&apos;s core insight—"Recognition follows verification"—wasn&apos;t just a product decision. It was a design principle. Trust cannot be assumed; it must be built into every interaction and every workflow.',
-              },
-              {
-                lesson: 'Conflict Should Be Resolved Around Product Goals, Not Personalities',
-                insight:
-                  'When two people disagree, the easiest path is assigning blame. The harder, more professional path is asking: "What does the user need? What did we agree to build? How do we move forward?" Focus on the problem, not the person.',
-              },
-              {
-                lesson: 'Dependencies Matter As Much As Individual Tasks',
-                insight:
-                  'A perfect Frontend without a Backend API is useless. I learned to map dependencies ruthlessly, identify critical paths, and protect teams from becoming blockers. Sequential work is slower but safer than parallel work with unmanaged dependencies.',
-              },
-              {
-                lesson: 'Product Leadership Is Often About Influence, Not Authority',
-                insight:
-                  'I didn&apos;t have formal authority over Frontend, Backend, or Mobile developers. But I had clarity, I had requirements, and I had a deadline. Leadership meant being the person who kept everyone moving in the same direction.',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="border-l-4 border-burgundy pl-6 md:pl-8">
-                <p className="heading-card mb-3">{item.lesson}</p>
-                <p className="body-default text-grey-secondary">{item.insight}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </CaseStudySection>
-
-      {/* Skills Demonstrated */}
-      <CaseStudySection title="Skills Demonstrated" backgroundLight>
-        <div className="container-wide">
-          <p className="body-large text-grey-secondary mb-10 md:mb-12">
-            This project was my operating system for product leadership. Here&apos;s what I demonstrated:
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              { skill: 'Cross-Functional Leadership', evidence: 'Led 6-person team across 5 disciplines for 1 month' },
-              { skill: 'Product Discovery', evidence: 'User surveys, NGO interviews, competitor analysis, industry research' },
-              { skill: 'Product Strategy', evidence: 'Defined volunteer lifecycle, MVP scope, core product decisions' },
-              { skill: 'Stakeholder Management', evidence: 'Communicated with investors, managed expectations, pitched product' },
-              { skill: 'Delivery Management', evidence: 'Set up Jira, tracked dependencies, monitored daily progress' },
-              { skill: 'Conflict Resolution', evidence: 'Mediated 6 real team disagreements productively' },
-              { skill: 'User Journey Design', evidence: 'Mapped 6-step volunteer lifecycle with product moments' },
-              { skill: 'Requirements Management', evidence: 'Created PRD, wireframes, user flows, detailed spec' },
-              { skill: 'Resource Management', evidence: 'Protected single Mobile developer, managed uneven team' },
-              { skill: 'Communication', evidence: 'Different messaging for engineers, designers, stakeholders' },
-              { skill: 'Facilitation', evidence: 'Organized and led all cross-functional meetings' },
-              { skill: 'Problem Solving', evidence: 'Unblocked dependencies, solved scope conflicts' },
-              { skill: 'Proactiveness', evidence: 'Anticipated bottlenecks, escalated early, prevented failures' },
-              { skill: 'Collaboration', evidence: 'Worked closely with Design, Frontend, Backend, Mobile teams' },
-              { skill: 'Presentation', evidence: 'Pitched to stakeholders, presented product direction' },
-            ].map((item) => (
-              <div key={item.skill} className="border border-grey-secondary/20 p-6 md:p-8 hover:border-burgundy/30 transition-all duration-300">
-                <p className="heading-card mb-3 text-near-black">{item.skill}</p>
-                <p className="body-small text-grey-secondary">{item.evidence}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </CaseStudySection>
-
-      {/* Next Project CTA */}
-      <section className="section-spacing bg-ivory border-t border-grey-secondary/10">
-        <div className="container-wide text-center md:text-left">
-          <h2 className="heading-section mb-6 md:mb-8">
-            Next: Bulk-Market
-          </h2>
-          <p className="body-large text-grey-secondary max-w-2xl mb-10 md:mb-12">
-            Building trust into B2B marketplace transactions for African businesses.
-          </p>
-          <Link
-            href="/case-studies/bulk-market"
-            className="inline-flex items-center gap-2 button-primary"
-          >
-            <span>View Case Study</span>
-            <span>→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* Bottom Navigation */}
-      <section className="section-spacing bg-ivory border-t border-grey-secondary/10">
-        <div className="container-wide text-center md:text-left">
-          <Link
-            href="/#work"
-            className="inline-flex items-center gap-2 button-secondary"
-          >
-            <span>←</span>
-            <span>Back to Selected Work</span>
-          </Link>
-        </div>
-      </section>
+      <section className="section-spacing section-warm border-t warm-divider"><div className="container-wide flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"><Link href="/#work" className="inline-flex items-center justify-center gap-2 button-secondary"><span aria-hidden="true">←</span><span>Back to Work</span></Link><Link href="/case-studies/bulk-market" className="inline-flex items-center justify-center gap-2 button-primary"><span>Next Project: Bulk-Market</span><span aria-hidden="true">→</span></Link></div></section>
 
       <Footer />
     </div>

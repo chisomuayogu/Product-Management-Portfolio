@@ -32,7 +32,7 @@ const toolCategories: ToolCategory[] = [
 
 export default function ToolsToolkit() {
   return (
-    <section className="section-spacing bg-ivory border-t border-grey-secondary/10">
+    <section className="section-spacing section-warm border-t warm-divider">
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-16 md:mb-20 lg:mb-24">
@@ -45,7 +45,7 @@ export default function ToolsToolkit() {
         {/* Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           {toolCategories.map((category) => (
-            <div key={category.name}>
+            <div key={category.name} className="glass-panel rounded-lg p-6 md:p-8">
               {/* Category Name */}
               <h3 className="heading-card mb-6 md:mb-8 text-near-black">
                 {category.name}

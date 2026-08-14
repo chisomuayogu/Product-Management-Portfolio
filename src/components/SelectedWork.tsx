@@ -46,7 +46,7 @@ const projects: ProjectCard[] = [
 
 export default function SelectedWork() {
   return (
-    <section id="work" className="section-spacing bg-white border-t border-grey-secondary/10">
+    <section id="work" className="section-spacing section-surface border-t warm-divider">
       <div className="container-wide">
         {/* Section Header */}
         <div className="mb-16 md:mb-20 lg:mb-24">
@@ -62,15 +62,13 @@ export default function SelectedWork() {
             <Link
               key={project.id}
               href={project.href}
-              className="group block border border-grey-secondary/10 p-8 md:p-10 hover:border-burgundy/50 transition-all duration-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
+              className="group premium-card block p-8 md:p-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
             >
               <article>
-                {/* Placeholder Image Area */}
-                <div className="mb-8 md:mb-10 bg-grey-secondary/5 aspect-video rounded flex items-center justify-center group-hover:bg-grey-secondary/10 transition-colors duration-300">
+                <div className="project-visual mb-8 md:mb-10 bg-cream/45 border border-burgundy/10 aspect-video rounded flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300">
                   <span className="text-grey-secondary text-sm">Project Image</span>
                 </div>
 
-                {/* Category */}
                 <p className="body-small mb-3 md:mb-4 uppercase tracking-wide text-grey-secondary">
                   {project.category}
                 </p>
@@ -87,7 +85,7 @@ export default function SelectedWork() {
 
                 {/* Capability Badge + Arrow */}
                 <div className="flex items-center justify-between">
-                  <div className="inline-block bg-burgundy/5 px-4 py-2 rounded text-sm text-burgundy font-medium">
+                  <div className="inline-block border border-burgundy/15 bg-burgundy/5 px-4 py-2 rounded text-sm text-burgundy font-medium">
                     {project.capability}
                   </div>
                   <span className="text-burgundy group-hover:translate-x-1 transition-transform duration-200">

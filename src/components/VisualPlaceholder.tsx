@@ -15,7 +15,7 @@ export default function VisualPlaceholder({
 
   return (
     <div
-      className={`${aspectClasses[aspectRatio]} bg-grey-secondary/5 border border-grey-secondary/20 rounded flex items-center justify-center`}
+      className={`${aspectClasses[aspectRatio]} bg-cream/40 border border-burgundy/15 rounded-lg shadow-wine-sm flex items-center justify-center`}
     >
       <div className="text-center">
         <p className="text-grey-secondary text-base md:text-lg font-medium">

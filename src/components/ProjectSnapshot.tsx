@@ -9,7 +9,7 @@ interface ProjectSnapshotProps {
 
 export default function ProjectSnapshot({ items }: ProjectSnapshotProps) {
   return (
-    <section className="section-spacing bg-white border-b border-grey-secondary/10">
+    <section className="section-spacing section-surface border-b warm-divider">
       <div className="container-wide">
         <h2 className="heading-section mb-12 md:mb-16">Project Snapshot</h2>
 
@@ -17,7 +17,7 @@ export default function ProjectSnapshot({ items }: ProjectSnapshotProps) {
           {items.map((item) => (
             <div
               key={item.label}
-              className="border border-grey-secondary/10 p-6 md:p-8 hover:border-burgundy/30 transition-all duration-300"
+              className="premium-card p-6 md:p-8"
             >
               <p className="eyebrow mb-3 md:mb-4">{item.label}</p>
               <p className="heading-card text-near-black">
