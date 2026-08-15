@@ -2,7 +2,8 @@
 
 ## Uploaded and integrated
 
-- `gradready-project-card.png` — homepage project-card composition
+- `gradready-project-card.png` — approved homepage project-card image
+- `gradready-cover.png` — approved case-study hero/cover image
 - `GradReady MVP User Flow (System:AI Flow).jpg` — MVP / system flow
 - `GradReady MVP User Flow (Student Flow).jpg` — student journey
 - `06 - Weekly Prompt.png` — weekly reflection screen
