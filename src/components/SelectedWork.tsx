@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface ProjectCard {
   id: string
@@ -7,6 +8,7 @@ interface ProjectCard {
   description: string
   capability: string
   href: string
+  image?: string
 }
 
 const projects: ProjectCard[] = [
@@ -17,6 +19,7 @@ const projects: ProjectCard[] = [
     description: 'Helping bootcamp students graduate with proof of what they built.',
     capability: 'Independent Product Ownership',
     href: '/case-studies/gradready',
+    image: '/projects/gradready/gradready-project-card.png',
   },
   {
     id: 'impacthub',
@@ -65,8 +68,18 @@ export default function SelectedWork() {
               className="group premium-card block p-8 md:p-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
             >
               <article>
-                <div className="project-visual mb-8 md:mb-10 bg-cream/45 border border-burgundy/10 aspect-video rounded flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300">
-                  <span className="text-grey-secondary text-sm">Project Image</span>
+                <div className="project-visual relative mb-8 md:mb-10 bg-cream/45 border border-burgundy/10 aspect-video rounded overflow-hidden flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} product experience showing weekly documentation, AI-assisted portfolio generation, and the final student portfolio`}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <span className="text-grey-secondary text-sm">Project Image</span>
+                  )}
                 </div>
 
                 <p className="body-small mb-3 md:mb-4 uppercase tracking-wide text-grey-secondary">
