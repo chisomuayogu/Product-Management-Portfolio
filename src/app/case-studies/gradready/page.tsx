@@ -48,6 +48,23 @@ export default function GradReadyCaseStudy() {
         description="An AI-assisted portfolio platform that helps bootcamp students transform weekly reflections into structured case studies and CV bullet points."
       />
 
+      {/* Approved project cover */}
+      <section className="pb-12 md:pb-16 lg:pb-20">
+        <div className="container-wide">
+          <div className="glass-panel overflow-hidden rounded-2xl p-2 md:p-3">
+            <Image
+              src="/projects/gradready/gradready-cover.png"
+              alt="GradReady product screens showing the journey from weekly reflection to a portfolio outcome"
+              width={1448}
+              height={1086}
+              priority
+              sizes="(min-width: 1280px) 1152px, calc(100vw - 2rem)"
+              className="h-auto w-full rounded-xl"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Project Snapshot */}
       <ProjectSnapshot
         items={[
