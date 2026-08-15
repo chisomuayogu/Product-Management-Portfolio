@@ -1,16 +1,38 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import CaseStudyHero from '@/components/CaseStudyHero'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
-import VisualPlaceholder from '@/components/VisualPlaceholder'
 import TwoColumn from '@/components/TwoColumn'
 
 export const metadata = {
   title: 'GradReady Case Study | Chisom Ayogu',
   description: 'Independent Product Ownership: AI-powered EdTech platform helping bootcamp students document and showcase their work.',
+}
+
+function FlowArtefact({ src, alt, width, height, caption }: { src: string; alt: string; width: number; height: number; caption: string }) {
+  return (
+    <figure className="space-y-3">
+      <a href={src} target="_blank" rel="noreferrer" className="block max-h-[48rem] overflow-y-auto rounded-xl border border-burgundy/15 bg-white p-3 shadow-wine-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+        <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className="h-auto w-full" />
+      </a>
+      <figcaption className="body-small text-grey-secondary">{caption} · Select to open the full-size artefact.</figcaption>
+    </figure>
+  )
+}
+
+function ScreenArtefact({ src, alt, width, height, label }: { src: string; alt: string; width: number; height: number; label: string }) {
+  return (
+    <figure className="premium-card overflow-hidden p-3">
+      <a href={src} target="_blank" rel="noreferrer" className="relative block aspect-[3/4] overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+        <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="h-full w-full object-contain object-top" />
+      </a>
+      <figcaption className="px-2 pb-2 pt-4"><p className="heading-card mb-1">{label}</p><p className="body-small text-grey-secondary">Authentic prototype screen · Open full size</p></figcaption>
+    </figure>
+  )
 }
 
 export default function GradReadyCaseStudy() {
@@ -195,7 +217,13 @@ export default function GradReadyCaseStudy() {
             </div>
           </div>
 
-          <VisualPlaceholder label="GradReady MVP Flow" />
+          <FlowArtefact
+            src="/projects/gradready/GradReady MVP User Flow (System:AI Flow).jpg"
+            alt="GradReady system and AI flow from weekly reflection submission through AI generation and public portfolio update"
+            width={1183}
+            height={3381}
+            caption="System and AI flow showing how a weekly reflection becomes a reviewed portfolio entry"
+          />
         </div>
       </CaseStudySection>
 
@@ -248,7 +276,13 @@ export default function GradReadyCaseStudy() {
           </div>
 
           <div className="mt-12 md:mt-16">
-            <VisualPlaceholder label="Student Experience Flow" aspectRatio="tall" />
+            <FlowArtefact
+              src="/projects/gradready/GradReady MVP User Flow (Student Flow).jpg"
+              alt="GradReady student user flow from invitation and signup through weekly logging and portfolio access"
+              width={1211}
+              height={3301}
+              caption="Student journey across onboarding, weekly documentation, and portfolio access"
+            />
           </div>
         </div>
       </CaseStudySection>
@@ -303,10 +337,11 @@ export default function GradReadyCaseStudy() {
             I built an interactive prototype to test the core flow: weekly prompts → AI generation → student review. This allowed early user feedback without full engineering investment.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-            <VisualPlaceholder label="Student Prompt Screen" aspectRatio="tall" />
-            <VisualPlaceholder label="AI Generation Preview" aspectRatio="tall" />
-            <VisualPlaceholder label="Portfolio Dashboard" aspectRatio="tall" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+            <ScreenArtefact src="/projects/gradready/06 - Weekly Prompt.png" alt="GradReady weekly reflection prompt screen" width={1060} height={3066} label="Weekly Reflection" />
+            <ScreenArtefact src="/projects/gradready/07 - Portfolio Entry Preview.png" alt="GradReady AI-generated portfolio entry preview screen" width={1060} height={3098} label="AI Portfolio Entry" />
+            <ScreenArtefact src="/projects/gradready/08 - Public Portfolio.png" alt="GradReady generated public student portfolio screen" width={1060} height={4430} label="Student Portfolio" />
+            <ScreenArtefact src="/projects/gradready/09 - Admin Dashboard.png" alt="GradReady bootcamp administrator dashboard screen" width={1060} height={3466} label="Admin Dashboard" />
           </div>
 
           <InsightCard>
