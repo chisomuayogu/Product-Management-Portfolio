@@ -8,7 +8,8 @@ interface ProjectCard {
   description: string
   capability: string
   href: string
-  image?: string
+  cardImage?: string
+  cardImageAlt?: string
 }
 
 const projects: ProjectCard[] = [
@@ -19,7 +20,7 @@ const projects: ProjectCard[] = [
     description: 'Helping bootcamp students graduate with proof of what they built.',
     capability: 'Independent Product Ownership',
     href: '/case-studies/gradready',
-    image: '/projects/gradready/gradready-project-card.png',
+    cardImage: '/projects/gradready/gradready-project-card.png',
   },
   {
     id: 'impacthub',
@@ -28,6 +29,8 @@ const projects: ProjectCard[] = [
     description: 'Leading a multidisciplinary team to build a trusted volunteer-management and impact-verification platform.',
     capability: 'Cross-Functional Product Leadership',
     href: '/case-studies/impacthub',
+    cardImage: '/projects/impacthub/impacthub-project-card.png',
+    cardImageAlt: 'ImpactHub product experience connecting volunteers and NGOs through opportunity management, contribution tracking, and verified recognition',
   },
   {
     id: 'bulk-market',
@@ -69,10 +72,10 @@ export default function SelectedWork() {
             >
               <article>
                 <div className="project-visual relative mb-8 md:mb-10 bg-cream/45 border border-burgundy/10 aspect-video rounded overflow-hidden flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300">
-                  {project.image ? (
+                  {project.cardImage ? (
                     <Image
-                      src={project.image}
-                      alt={`${project.name} product experience showing weekly documentation, AI-assisted portfolio generation, and the final student portfolio`}
+                      src={project.cardImage}
+                      alt={project.cardImageAlt ?? `${project.name} product experience showing weekly documentation, AI-assisted portfolio generation, and the final student portfolio`}
                       fill
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
