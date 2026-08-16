@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
-import VisualPlaceholder from '@/components/VisualPlaceholder'
 
 export const metadata = {
   title: 'ImpactHub Case Study | Chisom Ayogu',
@@ -74,6 +74,17 @@ function Flow({ steps }: { steps: string[] }) {
   )
 }
 
+function Artefact({ src, alt, width, height, caption, imageClassName = 'h-auto w-full' }: { src: string; alt: string; width: number; height: number; caption: string; imageClassName?: string }) {
+  return (
+    <figure className="premium-card overflow-hidden p-3 md:p-4">
+      <a href={src} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+        <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className={imageClassName} />
+      </a>
+      <figcaption className="body-small px-2 pb-2 pt-4 text-grey-secondary">{caption} · Select to open the full-size artefact.</figcaption>
+    </figure>
+  )
+}
+
 export default function ImpactHubCaseStudy() {
   return (
     <div className="bg-ivory">
@@ -96,7 +107,17 @@ export default function ImpactHubCaseStudy() {
               </div>
               <div className="flex flex-wrap gap-2">{capabilityTags.map((tag) => <span key={tag} className="rounded-full border border-burgundy/15 bg-ivory/70 px-3 py-2 text-xs font-medium text-burgundy">{tag}</span>)}</div>
             </div>
-            <VisualPlaceholder label="ImpactHub Main Product Image" />
+            <div className="glass-panel overflow-hidden rounded-2xl p-2 md:p-3">
+              <Image
+                src="/projects/impacthub/impacthub-cover.png"
+                alt="ImpactHub product experience connecting NGOs and volunteers across opportunity management, impact tracking, and recognition"
+                width={1448}
+                height={1086}
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="h-auto w-full rounded-xl object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -131,7 +152,11 @@ export default function ImpactHubCaseStudy() {
         <div className="container-wide space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="I Spearheaded"><BulletList items={['Market analysis', 'User research', 'Competitor analysis', 'Broader product research']} /></InsightCard><InsightCard label="Team Research"><BulletList items={['Volunteer surveys', 'NGO surveys', 'Competitor analysis', 'Industry research']} /></InsightCard></div>
           <InsightCard label="Key Insights"><BulletList items={researchInsights} /></InsightCard>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6"><VisualPlaceholder label="Survey Findings" /><VisualPlaceholder label="Competitor Analysis" /><VisualPlaceholder label="Research Notes" /></div>
+          <Artefact src="/projects/impacthub/impacthub-research-synthesis.png" alt="ImpactHub research synthesis covering methods, themes, pain points, opportunity areas, and product implications" width={1536} height={1024} caption="Research synthesis connecting evidence to product themes and MVP direction" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            <Artefact src="/projects/impacthub/impacthub-survey-findings.png" alt="ImpactHub survey findings and the resulting MVP priorities" width={1448} height={1086} caption="Survey findings used to identify demand, fragmented records, discovery gaps, and recognition needs" />
+            <Artefact src="/projects/impacthub/impacthub-competitor-analysis.png" alt="ImpactHub competitor analysis across volunteer management, service verification, and Africa-focused NGO tools" width={612} height={1008} caption="Competitor analysis across enterprise, service-verification, and Africa-focused platforms" imageClassName="mx-auto h-auto w-full max-w-[38rem] object-contain" />
+          </div>
         </div>
       </CaseStudySection>
 
@@ -140,7 +165,8 @@ export default function ImpactHubCaseStudy() {
       <CaseStudySection title="My Role & Leadership" backgroundLight>
         <div className="container-wide space-y-8">
           <p className="body-large text-near-black font-medium">I served as the overall Team Lead for the entire cross-functional capstone.</p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6"><InsightCard label="Leadership Responsibilities"><BulletList items={leadershipResponsibilities} /></InsightCard><div className="space-y-6"><InsightCard label="Cross-Functional Team Structure" highlighted><Flow steps={['Team Lead / Product Manager', 'Product', 'Design', 'Frontend', 'Backend', 'Mobile', 'Technical Writing']} /></InsightCard><VisualPlaceholder label="Cross-Functional Team Structure" /></div></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6"><InsightCard label="Leadership Responsibilities"><BulletList items={leadershipResponsibilities} /></InsightCard><InsightCard label="Cross-Functional Team Structure" highlighted><Flow steps={['Team Lead / Product Manager', 'Product', 'Design', 'Frontend', 'Backend', 'Mobile', 'Technical Writing']} /></InsightCard></div>
+          <Artefact src="/projects/impacthub/impacthub-team-structure.png" alt="Cross-functional team structure led by the Product Manager across Product, Design, Frontend, Backend, Mobile, and Technical Writing" width={1672} height={941} caption="Cross-functional team structure and delivery coordination across six workstreams" />
         </div>
       </CaseStudySection>
 
@@ -156,7 +182,7 @@ export default function ImpactHubCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection title="User Journeys">
-        <div className="container-wide space-y-8"><InsightCard label="NGO Journey"><Flow steps={['Register', 'Organisation Profile', 'Verification', 'Create Opportunity', 'Publish', 'Review Applications', 'Approve', 'Verify Contributions', 'Generate Certificates', 'View Reports']} /></InsightCard><InsightCard label="Volunteer Journey"><Flow steps={['Register', 'Complete Profile', 'Browse Opportunities', 'Apply', 'Track Application', 'Participate', 'Submit Evidence', 'Receive Verification', 'Receive Certificate', 'View Impact Profile']} /></InsightCard><VisualPlaceholder label="ImpactHub User Flows" /></div>
+        <div className="container-wide space-y-8"><InsightCard label="NGO Journey"><Flow steps={['Register', 'Organisation Profile', 'Verification', 'Create Opportunity', 'Publish', 'Review Applications', 'Approve', 'Verify Contributions', 'Generate Certificates', 'View Reports']} /></InsightCard><InsightCard label="Volunteer Journey"><Flow steps={['Register', 'Complete Profile', 'Browse Opportunities', 'Apply', 'Track Application', 'Participate', 'Submit Evidence', 'Receive Verification', 'Receive Certificate', 'View Impact Profile']} /></InsightCard><div className="overflow-x-auto pb-2"><div className="min-w-[64rem] md:min-w-0"><Artefact src="/projects/impacthub/impacthub-user-journeys.jpg" alt="Detailed connected NGO, platform administrator, and volunteer user journeys for ImpactHub" width={3225} height={1240} caption="Connected NGO and volunteer journeys, including platform verification and contribution recognition" /></div></div></div>
       </CaseStudySection>
 
       <CaseStudySection title="Verification Before Recognition" backgroundLight>
@@ -168,7 +194,7 @@ export default function ImpactHubCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection title="Jira & Delivery Management" backgroundLight>
-        <div className="container-wide space-y-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"><InsightCard label="Delivery Leadership"><BulletList items={['Set up the Jira board', 'Created delivery structure', 'Assigned work', 'Monitored status', 'Followed up on incomplete work', 'Tracked dependencies', 'Coordinated cross-track deliverables']} /></InsightCard><VisualPlaceholder label="Jira Board Screenshot" /></div><InsightCard label="Delivery Flow"><Flow steps={['Discovery', 'Design', 'Development', 'Testing', 'Demo / Pitch']} /></InsightCard></div>
+        <div className="container-wide space-y-8"><InsightCard label="Delivery Leadership"><BulletList items={['Set up the Jira board', 'Created delivery structure', 'Assigned work', 'Monitored status', 'Followed up on incomplete work', 'Tracked dependencies', 'Coordinated cross-track deliverables']} /></InsightCard><Artefact src="/projects/impacthub/impacthub-jira-board.png" alt="ImpactHub Jira backlog showing cross-functional sprint work and delivery status" width={3260} height={1758} caption="Jira board used to coordinate delivery and dependencies across product, design and engineering tracks" /><InsightCard label="Delivery Flow"><Flow steps={['Discovery', 'Design', 'Development', 'Testing', 'Demo / Pitch']} /></InsightCard></div>
       </CaseStudySection>
 
       <CaseStudySection title="Conflict Management"><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6">{conflictExamples.map((example) => <InsightCard key={example.title} label={example.title}><p className="body-default text-grey-secondary">{example.copy}</p></InsightCard>)}</div></CaseStudySection>
@@ -176,13 +202,13 @@ export default function ImpactHubCaseStudy() {
       <CaseStudySection title="Conflict Management Principle" backgroundLight><div className="container-wide"><InsightCard highlighted><p className="text-2xl md:text-3xl font-bold leading-snug text-near-black">“My approach was to bring cross-functional disagreements back to the user need, product requirement, ownership, dependency, delivery constraint, and shared product goal.”</p></InsightCard></div></CaseStudySection>
 
       <CaseStudySection title="Stakeholder Management & Pitch">
-        <div className="container-wide space-y-8"><div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"><InsightCard label="Stakeholder Leadership"><p className="body-default text-grey-secondary mb-5">The bootcamp stakeholders acted as investors.</p><BulletList items={['Communicated with stakeholders', 'Represented the product', 'Contributed to the final pitch', 'Communicated the problem', 'Explained the value proposition', 'Supported the product story', 'Explained product direction']} /></InsightCard><VisualPlaceholder label="Pitch Artefacts" /></div><InsightCard label="Communication Lesson" highlighted><p className="heading-card mb-5">Different audiences need different product communication.</p><BulletList items={['Engineers need implementation clarity', 'Designers need experience context', 'Stakeholders need problem, value, viability, and direction']} /></InsightCard></div>
+        <div className="container-wide space-y-8"><InsightCard label="Stakeholder Leadership"><p className="body-default text-grey-secondary mb-5">The bootcamp stakeholders acted as investors.</p><BulletList items={['Communicated with stakeholders', 'Represented the product', 'Contributed to the final pitch', 'Communicated the problem', 'Explained the value proposition', 'Supported the product story', 'Explained product direction']} /></InsightCard><Artefact src="/projects/impacthub/impacthub-stakeholder-pitch.png" alt="ImpactHub stakeholder pitch explaining the problem, NGO and volunteer journeys, and demonstrated product experience" width={1672} height={941} caption="Representative stakeholder-facing product narrative used to communicate ImpactHub’s problem, product journey and working demo" /><InsightCard label="Communication Lesson" highlighted><p className="heading-card mb-5">Different audiences need different product communication.</p><BulletList items={['Engineers need implementation clarity', 'Designers need experience context', 'Stakeholders need problem, value, viability, and direction']} /></InsightCard></div>
       </CaseStudySection>
 
       <CaseStudySection title="Constraints" backgroundLight><div className="container-wide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{['One-month delivery deadline', 'Uneven team resources', 'Only one Mobile Developer', 'Cross-functional dependencies', 'MVP scope limitations', 'Limited access to real users for usability testing'].map((constraint) => <div key={constraint} className="premium-card p-6"><p className="heading-card">{constraint}</p></div>)}</div></CaseStudySection>
 
       <CaseStudySection title="Outcome">
-        <div className="container-wide space-y-8"><InsightCard label="Capstone Outcome" highlighted><p className="body-large text-near-black mb-6">ImpactHub was developed and presented as a cross-track capstone.</p><BulletList items={['Research-backed product direction', 'Personas', 'Target users', 'MVP definition', 'Product strategy', 'User journeys', 'User flows', 'Prioritisation', 'Requirements', 'Product documentation', 'Figma designs', 'Jira-managed delivery', 'Cross-functional implementation work', 'Product demonstration', 'Stakeholder pitch']} /></InsightCard><div className="grid grid-cols-1 md:grid-cols-3 gap-6"><VisualPlaceholder label="Figma Designs" /><VisualPlaceholder label="Product Screens" /><VisualPlaceholder label="Product Demo" /></div></div>
+        <div className="container-wide space-y-8"><InsightCard label="Capstone Outcome" highlighted><p className="body-large text-near-black mb-6">ImpactHub was developed and presented as a cross-track capstone.</p><BulletList items={['Research-backed product direction', 'Personas', 'Target users', 'MVP definition', 'Product strategy', 'User journeys', 'User flows', 'Prioritisation', 'Requirements', 'Product documentation', 'Figma designs', 'Jira-managed delivery', 'Cross-functional implementation work', 'Product demonstration', 'Stakeholder pitch']} /></InsightCard><div><p className="eyebrow mb-5">Selected Product Screens</p><div className="grid grid-cols-1 md:grid-cols-2 gap-6"><Artefact src="/projects/impacthub/impacthub-ngo-opportunity-list.png" alt="ImpactHub NGO opportunity management list" width={1812} height={1718} caption="NGO opportunity management" /><Artefact src="/projects/impacthub/impacthub-ngo-create-opportunity.png" alt="ImpactHub multi-step opportunity creation screen" width={1844} height={1646} caption="NGO opportunity creation" /><Artefact src="/projects/impacthub/impacthub-volunteer-dashboard.png" alt="ImpactHub volunteer dashboard with applications and recommended opportunities" width={958} height={948} caption="Volunteer dashboard and opportunity discovery" /><Artefact src="/projects/impacthub/impacthub-volunteer-hours.png" alt="ImpactHub volunteer-hour tracking screen" width={848} height={774} caption="Volunteer contribution and hour tracking" /><div className="md:col-span-2"><Artefact src="/projects/impacthub/impacthub-volunteer-certificate.png" alt="ImpactHub verified volunteer certificate generation screen" width={3232} height={996} caption="Verified contribution recognition and certificate generation" /></div></div></div></div>
       </CaseStudySection>
 
       <CaseStudySection title="What I Learned" backgroundLight><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6">{lessons.map((lesson, index) => <div key={lesson} className="premium-card p-6 flex gap-4"><span className="w-9 h-9 flex-shrink-0 rounded-full bg-burgundy text-ivory flex items-center justify-center font-semibold">{index + 1}</span><p className="heading-card">{lesson}</p></div>)}</div></CaseStudySection>
