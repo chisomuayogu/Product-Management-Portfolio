@@ -80,7 +80,7 @@ export default function SelectedWork() {
                       alt={project.cardImageAlt ?? `${project.name} product experience showing weekly documentation, AI-assisted portfolio generation, and the final student portfolio`}
                       fill
                       sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      className={`${project.id === 'bulk-market' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.02]`}
                     />
                   ) : (
                     <span className="text-grey-secondary text-sm">Project Image</span>
