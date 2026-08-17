@@ -39,6 +39,8 @@ const projects: ProjectCard[] = [
     description: 'Designing trust into wholesale transactions between African businesses.',
     capability: 'Marketplace Strategy & Trust',
     href: '/case-studies/bulk-market',
+    cardImage: '/projects/bulk-market/BULK MARKET PROJECT CARD IMAGE.png',
+    cardImageAlt: 'Bulk-Market wholesale marketplace experience showing buyer discovery, trusted suppliers, payment protection, order tracking, and seller tools',
   },
   {
     id: 'foodsaver',
