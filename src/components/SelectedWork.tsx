@@ -49,6 +49,8 @@ const projects: ProjectCard[] = [
     description: 'Turning surplus food into affordable meals instead of waste.',
     capability: 'Problem-to-Prototype Execution',
     href: '/case-studies/foodsaver',
+    cardImage: '/projects/foodsaver/FOODSAVER PROJECT CARD IMAGE.png',
+    cardImageAlt: 'FoodSaver marketplace experience showing nearby food discovery, food details, checkout, and the product sustainability proposition',
   },
 ]
 
@@ -80,7 +82,7 @@ export default function SelectedWork() {
                       alt={project.cardImageAlt ?? `${project.name} product experience showing weekly documentation, AI-assisted portfolio generation, and the final student portfolio`}
                       fill
                       sizes="(min-width: 768px) 50vw, 100vw"
-                      className={`${project.id === 'bulk-market' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.02]`}
+                      className={`${project.id === 'bulk-market' || project.id === 'foodsaver' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-[1.02]`}
                     />
                   ) : (
                     <span className="text-grey-secondary text-sm">Project Image</span>
