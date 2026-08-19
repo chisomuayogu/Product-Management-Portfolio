@@ -14,20 +14,20 @@ export const metadata = {
 
 const outcomes = [
   'Problem definition', 'Solution statement', 'Business goal', 'User goal', 'Environmental goal',
-  'Personas', 'MVP definition', 'User flow', 'Low-fidelity wireframes', 'High-fidelity design', 'Interactive prototype',
+  'Personas', 'MVP definition', 'User flow', 'High-fidelity design', 'Interactive prototype',
 ]
 
 const lessons = [
   'Start with the core transaction',
   'Product value can serve business, consumer, and environmental goals',
   'User flows make ideas concrete',
-  'Low-fidelity design helps expose problems early',
+  'Testing the end-to-end flow helps expose gaps early',
   'Offline experience can be part of the product experience',
   'Product decisions should reflect business mechanics',
 ]
 
 const skills = [
-  'Problem Framing', 'Persona Development', 'MVP Definition', 'User Flow Design', 'Wireframing',
+  'Problem Framing', 'Persona Development', 'MVP Definition', 'User Flow Design',
   'Product Design', 'Prototyping', 'Marketplace Thinking', 'Sustainability Thinking', 'Product Decision Making',
 ]
 
@@ -36,11 +36,11 @@ function BulletList({ items }: { items: string[] }) {
 }
 
 function Flow({ steps }: { steps: string[] }) {
-  return <div className="flex flex-wrap items-center gap-3">{steps.map((step, index) => <div key={`${step}-${index}`} className="flex items-center gap-3"><span className="rounded-full border border-burgundy/20 bg-white px-4 py-2 text-sm font-semibold text-near-black shadow-sm">{step}</span>{index < steps.length - 1 && <span className="text-burgundy" aria-hidden="true">→</span>}</div>)}</div>
+  return <ol className="flex flex-wrap items-center gap-3">{steps.map((step, index) => <li key={`${step}-${index}`} className="flex items-center gap-3"><span className="rounded-full border border-burgundy/20 bg-white px-4 py-2 text-sm font-semibold text-near-black shadow-sm">{step}</span>{index < steps.length - 1 && <span className="text-burgundy" aria-hidden="true">→</span>}</li>)}</ol>
 }
 
 function Artefact({ src, alt, width, height, caption, scrollOnMobile = false, imageClassName = 'h-auto w-full' }: { src: string; alt: string; width: number; height: number; caption: string; scrollOnMobile?: boolean; imageClassName?: string }) {
-  return <div className={scrollOnMobile ? 'overflow-x-auto pb-2' : undefined}><figure className={`${scrollOnMobile ? 'min-w-[52rem] md:min-w-0' : ''} overflow-hidden rounded-xl border border-burgundy/10 bg-white shadow-sm`}><div className="bg-cream/35"><Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className={imageClassName} /></div><figcaption className="border-t border-burgundy/10 px-5 py-4 body-small text-grey-secondary">{caption}</figcaption></figure></div>
+  return <div className={scrollOnMobile ? 'overflow-x-auto pb-2 focus-visible:rounded-xl' : undefined} role={scrollOnMobile ? 'region' : undefined} aria-label={scrollOnMobile ? 'Scrollable FoodSaver user-journey diagram' : undefined} tabIndex={scrollOnMobile ? 0 : undefined}><figure className={`${scrollOnMobile ? 'min-w-[52rem] md:min-w-0' : ''} overflow-hidden rounded-xl border border-burgundy/10 bg-white shadow-sm`}><div className="bg-cream/35"><Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className={imageClassName} /></div><figcaption className="border-t border-burgundy/10 px-5 py-4 body-small text-grey-secondary">{caption}</figcaption></figure></div>
 }
 
 function ScreenArtefact({ src, alt, width, height, caption }: { src: string; alt: string; width: number; height: number; caption: string }) {
@@ -56,12 +56,12 @@ export default function FoodSaverCaseStudy() {
         title="FoodSaver"
         positioning="Turning surplus food into affordable meals instead of waste."
         industry="FoodTech / Sustainability Marketplace"
-        description="FoodSaver is a mobile marketplace designed to help food businesses recover value from surplus food while giving consumers access to discounted meals and reducing avoidable food waste."
+        description="FoodSaver is a mobile marketplace concept designed to help food businesses recover value from surplus food, give consumers access to discounted meals, and support the goal of reducing avoidable food waste."
       />
 
       <section className="section-surface pb-12 md:pb-16">
         <div className="container-wide">
-          <Artefact src="/projects/foodsaver/FOODSAVER Project Case Study Hero:Cover Image.png" alt="FoodSaver product showcase featuring consumer discovery, food details, checkout, order confirmation and seller dashboard screens" width={1672} height={941} caption="FoodSaver consumer and seller product experience" />
+          <Artefact src="/projects/foodsaver/FOODSAVER Project Case Study Hero:Cover Image.png" alt="FoodSaver product concept showing consumer discovery, food details, checkout, order confirmation, seller dashboard and listing-creation screens" width={1672} height={941} caption="FoodSaver consumer and seller concept screens · Illustrative demo data, not launch results" />
         </div>
       </section>
 
@@ -69,7 +69,7 @@ export default function FoodSaverCaseStudy() {
         { label: 'Industry', value: 'FoodTech / Sustainability' },
         { label: 'Product', value: 'Mobile Marketplace' },
         { label: 'Project Context', value: 'Product Management Bootcamp Project' },
-        { label: 'Focus', value: 'MVP · User Flows · Wireframes · Figma · Prototyping' },
+        { label: 'Focus', value: 'MVP · User Flows · Figma · Prototyping' },
       ]} />
 
       <CaseStudySection title="The Problem" backgroundLight><div className="container-wide space-y-8">
@@ -78,7 +78,7 @@ export default function FoodSaverCaseStudy() {
         <InsightCard label="Problem Statement" highlighted><p className="text-2xl md:text-3xl font-bold leading-snug text-near-black">“How might we help food businesses recover revenue from surplus inventory while helping consumers access affordable food and reducing avoidable food waste?”</p></InsightCard>
       </div></CaseStudySection>
 
-      <CaseStudySection title="Value Proposition"><div className="container-wide grid grid-cols-1 md:grid-cols-3 gap-6"><InsightCard label="Business"><p className="heading-card">Recover value from unsold inventory.</p></InsightCard><InsightCard label="Consumer"><p className="heading-card">Access affordable food.</p></InsightCard><InsightCard label="Environment"><p className="heading-card">Reduce avoidable food waste.</p></InsightCard></div></CaseStudySection>
+      <CaseStudySection title="Value Proposition"><div className="container-wide grid grid-cols-1 md:grid-cols-3 gap-6"><InsightCard label="Business"><p className="heading-card">Recover value from unsold inventory.</p></InsightCard><InsightCard label="Consumer"><p className="heading-card">Access discounted food.</p></InsightCard><InsightCard label="Environment"><p className="heading-card">Support the goal of reducing avoidable food waste.</p></InsightCard></div></CaseStudySection>
 
       <CaseStudySection title="Target Users" backgroundLight><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6">
         <InsightCard label="Sarah · 27 · Graduate Student"><p className="eyebrow mb-4 text-burgundy">Consumer Persona</p><p className="font-semibold text-near-black mb-3">Goals</p><BulletList items={['Save money', 'Discover affordable meals', 'Purchase food quickly']} /><p className="font-semibold text-near-black mt-6 mb-3">Pain Points</p><BulletList items={['High food prices', 'Limited budget', 'Difficult to find discounted food']} /></InsightCard>
@@ -89,9 +89,9 @@ export default function FoodSaverCaseStudy() {
 
       <CaseStudySection title="MVP" backgroundLight><div className="container-wide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><InsightCard label="Account"><BulletList items={['Registration', 'Verification', 'Authentication']} /></InsightCard><InsightCard label="Discovery"><BulletList items={['Browse deals', 'Search', 'Nearby offers']} /></InsightCard><InsightCard label="Transaction"><BulletList items={['Food details', 'Reservation', 'Payment']} /></InsightCard><InsightCard label="Completion"><BulletList items={['Confirmation', 'Pickup location', 'Pickup time', 'Collection details']} /></InsightCard></div></CaseStudySection>
 
-      <CaseStudySection title="Core User Journey"><div className="container-wide space-y-8"><InsightCard label="Central Flow" highlighted><Flow steps={['Launch', 'Register / Sign In', 'Browse', 'View Deal', 'Reserve', 'Pay', 'Confirm', 'Pick Up']} /></InsightCard><Artefact src="/projects/foodsaver/FOODSAVER COMPLETE USER JOURNEYS_FLOWS.jpg" alt="FoodSaver consumer and seller journey showing food discovery, reservation, checkout, pickup, listing creation and order management" width={2651} height={1508} caption="Connected consumer journey, seller journey and shared marketplace loop" scrollOnMobile /><div><a href="https://miro.com/app/board/uXjVHxKuknA=/?share_link_id=851736191556" target="_blank" rel="noopener noreferrer" className="button-secondary inline-flex items-center justify-center gap-2 text-center"><span>View Full User Journey</span><span aria-hidden="true">↗</span></a></div></div></CaseStudySection>
+      <CaseStudySection title="Core User Journey"><div className="container-wide space-y-8"><div className="grid grid-cols-1 gap-6"><InsightCard label="Consumer Journey" highlighted><Flow steps={['Onboarding', 'Account Access', 'Home / Explore', 'Food Details', 'Cart / Reserve', 'Checkout', 'Order Confirmation', 'Pickup / Orders']} /></InsightCard><InsightCard label="Seller Journey"><Flow steps={['Seller Dashboard', 'Create Food Listing', 'Publish Offer', 'Receive Order / Reservation', 'Fulfilment']} /></InsightCard></div><p className="body-small text-grey-secondary md:hidden">Scroll horizontally to inspect the complete journey diagram.</p><Artefact src="/projects/foodsaver/FOODSAVER COMPLETE USER JOURNEYS_FLOWS.jpg" alt="FoodSaver consumer journey from onboarding through discovery, reservation, checkout and pickup, plus seller journey from dashboard and listing creation through order fulfilment" width={2651} height={1508} caption="Approved consumer and seller flow · The marketplace loop represents intended value, not measured outcomes" scrollOnMobile /><div><a href="https://miro.com/app/board/uXjVHxKuknA=/?share_link_id=851736191556" target="_blank" rel="noopener noreferrer" className="button-secondary inline-flex items-center justify-center gap-2 text-center"><span>View Full User Journey</span><span aria-hidden="true">↗</span></a></div></div></CaseStudySection>
 
-      <CaseStudySection title="High-Fidelity Design"><div className="container-wide space-y-8"><p className="body-large text-grey-secondary max-w-3xl">The interface needed to make the product image, original and discounted prices, availability, seller, pickup deadline, reservation state, payment state, and collection details clear.</p><Artefact src="/projects/foodsaver/FOODSAVER ONBOARDING SCREENS.png" alt="Three FoodSaver onboarding screens introducing affordability, food-waste reduction and support for local food businesses" width={1150} height={974} caption="Consumer onboarding and value proposition" /><div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"><ScreenArtefact src="/projects/foodsaver/FOODSAVER SIGNUP AND LOG IN SCREENS.png" alt="FoodSaver account-access and account-creation screens" width={772} height={1158} caption="Account access" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER HOME PAGE SCREEN.png" alt="FoodSaver home screen showing featured and nearby discounted food deals" width={442} height={1820} caption="Home and nearby discovery" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER EXPLORE SCREEN.png" alt="FoodSaver explore screen with search, filters, availability and discounted food listings" width={410} height={1052} caption="Explore and filtering" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER FAVOURITE SCREEN.png" alt="FoodSaver favourites screen containing saved food deals" width={428} height={1312} caption="Saved deals" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER ORDER SCREEN.png" alt="FoodSaver order screen showing active pickup states, pickup codes and directions" width={420} height={922} caption="Active orders and pickup" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER SELLER DASHBOARD SCREEN.png" alt="FoodSaver seller dashboard showing listings, orders, recent activity and store-management actions" width={416} height={1484} caption="Seller dashboard · illustrative demo data" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER CREATE FOOD LISITING SCREEN.png" alt="FoodSaver create-listing screen for food image, category, pricing, quantity and pickup window" width={432} height={1326} caption="Seller listing creation" /></div></div></CaseStudySection>
+      <CaseStudySection title="High-Fidelity Design"><div className="container-wide space-y-8"><div className="max-w-3xl space-y-3"><p className="body-large text-grey-secondary">The interface needed to make the product image, original and discounted prices, availability, seller, pickup deadline, reservation state, payment state, and collection details clear.</p><p className="body-small font-medium text-burgundy">All screen content and values are illustrative prototype data, not live traction.</p></div><Artefact src="/projects/foodsaver/FOODSAVER ONBOARDING SCREENS.png" alt="Three FoodSaver onboarding screens introducing affordability, food-waste reduction and support for local food businesses" width={1150} height={974} caption="Consumer onboarding and value proposition" /><div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"><ScreenArtefact src="/projects/foodsaver/FOODSAVER SIGNUP AND LOG IN SCREENS.png" alt="FoodSaver account-access and account-creation screens" width={772} height={1158} caption="Account access" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER HOME PAGE SCREEN.png" alt="FoodSaver home screen showing featured and nearby discounted food deals" width={442} height={1820} caption="Home and nearby discovery" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER EXPLORE SCREEN.png" alt="FoodSaver explore screen with search, filters, availability and discounted food listings" width={410} height={1052} caption="Explore and filtering" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER ORDER SCREEN.png" alt="FoodSaver order screen showing active pickup states, pickup codes and directions" width={420} height={922} caption="Active orders and pickup" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER SELLER DASHBOARD SCREEN.png" alt="FoodSaver seller dashboard showing listings, orders, recent activity and store-management actions" width={416} height={1484} caption="Seller dashboard · illustrative demo data" /><ScreenArtefact src="/projects/foodsaver/FOODSAVER CREATE FOOD LISITING SCREEN.png" alt="FoodSaver create-listing screen for food image, category, pricing, quantity and pickup window" width={432} height={1326} caption="Seller listing creation" /></div></div></CaseStudySection>
 
       <CaseStudySection title="Discovery Experience" backgroundLight><div className="container-wide space-y-8"><InsightCard highlighted><p className="text-2xl md:text-3xl font-bold text-near-black">“Is there affordable food near me that I actually want to buy?”</p></InsightCard><div className="grid grid-cols-1 md:grid-cols-3 gap-6"><InsightCard label="Identify"><p className="heading-card">Make food visually identifiable.</p></InsightCard><InsightCard label="Value"><p className="heading-card">Make savings obvious.</p></InsightCard><InsightCard label="Timing"><p className="heading-card">Make pickup timing clear.</p></InsightCard></div></div></CaseStudySection>
 

@@ -75,7 +75,7 @@ export default function SelectedWork() {
               className="group premium-card block p-8 md:p-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
             >
               <article>
-                <div className={`project-visual relative bg-cream/45 border border-burgundy/10 aspect-video rounded overflow-hidden flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300 ${project.id === 'impacthub' ? 'mb-3' : 'mb-8 md:mb-10'}`}>
+                <div className={`project-visual relative bg-cream/45 border border-burgundy/10 aspect-video rounded overflow-hidden flex items-center justify-center group-hover:bg-blush/30 transition-colors duration-300 ${project.id === 'impacthub' || project.id === 'foodsaver' ? 'mb-3' : 'mb-8 md:mb-10'}`}>
                   {project.cardImage ? (
                     <Image
                       src={project.cardImage}
@@ -92,6 +92,12 @@ export default function SelectedWork() {
                 {project.id === 'impacthub' && (
                   <p className="body-small mb-8 text-grey-secondary md:mb-10">
                     Prototype interface shown with illustrative demo data.
+                  </p>
+                )}
+
+                {project.id === 'foodsaver' && (
+                  <p className="body-small mb-8 text-grey-secondary md:mb-10">
+                    Concept screens shown with illustrative demo data.
                   </p>
                 )}
 
