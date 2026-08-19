@@ -1,22 +1,9 @@
 # FoodSaver artefacts
 
-Expected authentic files:
+The FoodSaver case study uses the approved project-card image, case-study cover,
+consumer and seller journey, curated high-fidelity screens, and prototype
+preview stored in this directory.
 
-- `foodsaver-user-flow.png`
-- `foodsaver-wireframe-strip.png`
-- `foodsaver-high-fidelity-gallery.png`
-- `foodsaver-food-detail.png`
-- `foodsaver-reservation.png`
-- `foodsaver-payment.png`
-- `foodsaver-confirmation-pickup.png`
-
-If the wireframes are exported individually instead of as a strip, use:
-
-- `foodsaver-wireframe-onboarding.png`
-- `foodsaver-wireframe-authentication.png`
-- `foodsaver-wireframe-home.png`
-- `foodsaver-wireframe-listing.png`
-- `foodsaver-wireframe-food-detail.png`
-- `foodsaver-wireframe-reservation.png`
-- `foodsaver-wireframe-payment.png`
-- `foodsaver-wireframe-confirmation.png`
+The project-card image and case-study cover are intentionally separate assets.
+All interface values shown in these concept screens are illustrative demo data,
+not commercial or post-launch results.
