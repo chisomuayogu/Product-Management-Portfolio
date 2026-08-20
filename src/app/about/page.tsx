@@ -1,6 +1,8 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { PROFESSIONAL_HEADSHOT } from '@/data/profile'
 
 export const metadata = {
   title: 'About | Chisom Ayogu — Product Manager',
@@ -55,15 +57,32 @@ export default function AboutPage() {
 
       <main>
         <section className="section-spacing hero-atmosphere page-hero">
-          <div className="container-wide">
-            <p className="eyebrow mb-6 md:mb-8">About Chisom</p>
-            <h1 className="heading-hero mb-8 max-w-5xl md:mb-10">
-              Early-career Product Manager bringing legal rigour to practical product work.
-            </h1>
-            <p className="body-large max-w-3xl text-grey-secondary">
-              I&apos;m building my Product Management career on a legal foundation, combining structured research, analysis, problem framing, and clear communication with hands-on experience across product discovery, strategy, and execution.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="container-wide grid items-center gap-x-12 lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.8fr)] xl:gap-x-20">
+            <div>
+              <p className="eyebrow mb-6 md:mb-8">About Chisom</p>
+              <h1 className="heading-hero mb-8 max-w-5xl md:mb-10">
+                Early-career Product Manager bringing legal rigour to practical product work.
+              </h1>
+              <p className="body-large max-w-3xl text-grey-secondary">
+                I&apos;m building my Product Management career on a legal foundation, combining structured research, analysis, problem framing, and clear communication with hands-on experience across product discovery, strategy, and execution.
+              </p>
+            </div>
+
+            <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0">
+              <div className="mx-auto w-full max-w-[22rem] rounded-2xl border border-burgundy/15 bg-ivory/70 p-2 shadow-wine-sm sm:max-w-[24rem] lg:max-w-[26rem]">
+                <Image
+                  src={PROFESSIONAL_HEADSHOT.src}
+                  alt={PROFESSIONAL_HEADSHOT.alt}
+                  width={PROFESSIONAL_HEADSHOT.width}
+                  height={PROFESSIONAL_HEADSHOT.height}
+                  priority
+                  sizes="(min-width: 1280px) 400px, (min-width: 1024px) 34vw, (min-width: 640px) 384px, calc(100vw - 3rem)"
+                  className="h-auto w-full rounded-xl object-cover object-center"
+                />
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:col-start-1 lg:row-start-2">
               <Link
                 href="/#work"
                 className="button-primary inline-flex w-full items-center justify-center text-center sm:w-auto"
