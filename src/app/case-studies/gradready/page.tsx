@@ -71,7 +71,7 @@ export default function GradReadyCaseStudy() {
           { label: 'My Role', value: 'Solo PM' },
           { label: 'Project Type', value: 'Individual Capstone' },
           { label: 'Focus', value: 'MVP & Validation Strategy' },
-          { label: 'Timeline', value: 'Bootcamp Duration' },
+          { label: 'Timeline', value: 'One Week' },
         ]}
       />
 
@@ -300,6 +300,17 @@ export default function GradReadyCaseStudy() {
               height={3301}
               caption="Student journey across onboarding, weekly documentation, and portfolio access"
             />
+            <div className="mt-6 flex">
+              <a
+                href="https://miro.com/app/board/uXjVH80lVuI=/?share_link_id=62235516329"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-secondary inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto"
+              >
+                <span>View Full User Flow</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </CaseStudySection>
@@ -354,6 +365,19 @@ export default function GradReadyCaseStudy() {
             I built an interactive prototype to test the core flow: weekly prompts → AI generation → student review. This allowed early user feedback without full engineering investment.
           </p>
 
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between md:mb-8">
+            <p className="eyebrow">High-Fidelity Product Designs</p>
+            <a
+              href="https://www.figma.com/design/XaJmdnlpSNmXHv3LgXZGLC/Untitled?node-id=0-1&t=jNcQgMqAPRWW66pG-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-secondary inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto"
+            >
+              <span>View Figma Designs</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
             <ScreenArtefact src="/projects/gradready/06 - Weekly Prompt.png" alt="GradReady weekly reflection prompt screen" width={1060} height={3066} label="Weekly Reflection" />
             <ScreenArtefact src="/projects/gradready/07 - Portfolio Entry Preview.png" alt="GradReady AI-generated portfolio entry preview screen" width={1060} height={3098} label="AI Portfolio Entry" />
@@ -367,6 +391,18 @@ export default function GradReadyCaseStudy() {
               Built using Figma + prototyping. Showed realistic data (actual student responses) to make feedback concrete. Tested with 4-5 students and 2 bootcamp admins to validate core assumptions before any backend work.
             </p>
           </InsightCard>
+
+          <div className="mt-8 flex">
+            <a
+              href="https://www.figma.com/proto/XaJmdnlpSNmXHv3LgXZGLC/GradReady-Product-Design-and-Prototype?node-id=0-1&t=jNcQgMqAPRWW66pG-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto"
+            >
+              <span>Explore Interactive Prototype</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </CaseStudySection>
 
