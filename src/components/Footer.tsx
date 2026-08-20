@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
+import { CONTACT_DETAILS } from '@/data/contact'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -62,10 +63,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-ivory/60">LinkedIn · Details pending</span>
+                <a
+                  href={CONTACT_DETAILS.linkedinHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li>
-                <span className="text-ivory/60">Email · Details pending</span>
+                <a
+                  href={CONTACT_DETAILS.emailHref}
+                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                >
+                  Email
+                </a>
               </li>
             </ul>
           </div>
