@@ -3,12 +3,12 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Chisom Ayogu | Product Manager',
-  description: 'Product Manager with hands-on experience across product discovery, AI-enabled products, marketplace strategy, and cross-functional leadership.',
+  description: 'Early-career Product Manager combining legal rigour with hands-on experience across product discovery, AI-enabled products, marketplace strategy, and cross-functional delivery.',
   keywords: ['Product Manager', 'Product Strategy', 'Product Leadership', 'Chisom Ayogu'],
   authors: [{ name: 'Chisom Ayogu' }],
   openGraph: {
     title: 'Chisom Ayogu | Product Manager',
-    description: 'Product Manager with hands-on experience across product discovery, AI-enabled products, marketplace strategy, and cross-functional leadership.',
+    description: 'Early-career Product Manager combining legal rigour with hands-on experience across product discovery, AI-enabled products, marketplace strategy, and cross-functional delivery.',
     type: 'website',
   },
 }

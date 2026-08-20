@@ -49,7 +49,7 @@ export default function Hero() {
         </svg>
 
         <div className={`container-wide ${styles.content}`}>
-          <div className={styles.eyebrow}>Product Manager</div>
+          <div className={styles.eyebrow}>Early-Career Product Manager</div>
 
           <h1 className={styles.heading}>
             <span>I turn complex user</span>
@@ -59,9 +59,9 @@ export default function Hero() {
           </h1>
 
           <p className={styles.supportingCopy}>
-            <span>Product Manager with hands-on experience across product discovery,</span>
-            <span>AI-enabled products, marketplace strategy, cross-functional leadership,</span>
-            <span>and product delivery.</span>
+            <span>With a legal background, I bring hands-on experience across product discovery,</span>
+            <span>AI-enabled products, marketplace strategy, cross-functional delivery,</span>
+            <span>and stakeholder communication.</span>
           </p>
 
           <div className={styles.actions}>
