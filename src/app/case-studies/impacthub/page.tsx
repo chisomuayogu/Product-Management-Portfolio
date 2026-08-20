@@ -77,7 +77,7 @@ function Flow({ steps }: { steps: string[] }) {
 function Artefact({ src, alt, width, height, caption, imageClassName = 'h-auto w-full' }: { src: string; alt: string; width: number; height: number; caption: string; imageClassName?: string }) {
   return (
     <figure className="premium-card overflow-hidden p-3 md:p-4">
-      <a href={src} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+      <a href={src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
         <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className={imageClassName} />
       </a>
       <figcaption className="body-small px-2 pb-2 pt-4 text-grey-secondary">{caption} · Select to open the full-size artefact.</figcaption>
@@ -182,7 +182,7 @@ export default function ImpactHubCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection title="User Journeys">
-        <div className="container-wide space-y-8"><InsightCard label="NGO Journey"><Flow steps={['Register', 'Organisation Profile', 'Verification', 'Create Opportunity', 'Publish', 'Review Applications', 'Approve', 'Verify Contributions', 'Generate Certificates', 'View Reports']} /></InsightCard><InsightCard label="Volunteer Journey"><Flow steps={['Register', 'Complete Profile', 'Browse Opportunities', 'Apply', 'Track Application', 'Participate', 'Submit Evidence', 'Receive Verification', 'Receive Certificate', 'View Impact Profile']} /></InsightCard><div className="overflow-x-auto pb-2"><div className="min-w-[64rem] md:min-w-0"><Artefact src="/projects/impacthub/impacthub-user-journeys.jpg" alt="Detailed connected NGO, platform administrator, and volunteer user journeys for ImpactHub" width={3225} height={1240} caption="Connected NGO and volunteer journeys, including platform verification and contribution recognition" /></div></div></div>
+        <div className="container-wide space-y-8"><InsightCard label="NGO Journey"><Flow steps={['Register', 'Organisation Profile', 'Verification', 'Create Opportunity', 'Publish', 'Review Applications', 'Approve', 'Verify Contributions', 'Generate Certificates', 'View Reports']} /></InsightCard><InsightCard label="Volunteer Journey"><Flow steps={['Register', 'Complete Profile', 'Browse Opportunities', 'Apply', 'Track Application', 'Participate', 'Submit Evidence', 'Receive Verification', 'Receive Certificate', 'View Impact Profile']} /></InsightCard><div className="overflow-x-auto pb-2 focus-visible:rounded-xl" role="region" aria-label="Scrollable ImpactHub user-journey diagram" tabIndex={0}><div className="min-w-[64rem] md:min-w-0"><Artefact src="/projects/impacthub/impacthub-user-journeys.jpg" alt="Detailed connected NGO, platform administrator, and volunteer user journeys for ImpactHub" width={3225} height={1240} caption="Connected NGO and volunteer journeys, including platform verification and contribution recognition" /></div></div></div>
       </CaseStudySection>
 
       <CaseStudySection title="Verification Before Recognition" backgroundLight>

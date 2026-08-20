@@ -16,7 +16,7 @@ export const metadata = {
 function FlowArtefact({ src, alt, width, height, caption }: { src: string; alt: string; width: number; height: number; caption: string }) {
   return (
     <figure className="space-y-3">
-      <a href={src} target="_blank" rel="noreferrer" className="block max-h-[48rem] overflow-y-auto rounded-xl border border-burgundy/15 bg-white p-3 shadow-wine-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+      <a href={src} target="_blank" rel="noopener noreferrer" className="block max-h-[48rem] overflow-y-auto rounded-xl border border-burgundy/15 bg-white p-3 shadow-wine-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
         <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className="h-auto w-full" />
       </a>
       <figcaption className="body-small text-grey-secondary">{caption} · Select to open the full-size artefact.</figcaption>
@@ -27,7 +27,7 @@ function FlowArtefact({ src, alt, width, height, caption }: { src: string; alt: 
 function ScreenArtefact({ src, alt, width, height, label }: { src: string; alt: string; width: number; height: number; label: string }) {
   return (
     <figure className="premium-card overflow-hidden p-3">
-      <a href={src} target="_blank" rel="noreferrer" className="relative block aspect-[3/4] overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
+      <a href={src} target="_blank" rel="noopener noreferrer" className="relative block aspect-[3/4] overflow-hidden rounded-lg bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy">
         <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="h-full w-full object-contain object-top" />
       </a>
       <figcaption className="px-2 pb-2 pt-4"><p className="heading-card mb-1">{label}</p><p className="body-small text-grey-secondary">Authentic prototype screen · Open full size</p></figcaption>
