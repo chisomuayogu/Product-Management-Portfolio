@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
+import { CONTACT_DETAILS } from '@/data/contact'
 
 export const metadata = {
   title: 'Contact | Chisom Ayogu — Product Manager',
@@ -47,10 +48,10 @@ export default function ContactPage() {
                   <dt className="eyebrow text-burgundy">Email</dt>
                   <dd>
                     <a
-                      href="mailto:chisomuayogu@gmail.com"
+                      href={CONTACT_DETAILS.emailHref}
                       className="link-primary inline-block break-words font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
                     >
-                      chisomuayogu@gmail.com
+                      {CONTACT_DETAILS.email}
                     </a>
                   </dd>
                 </div>
@@ -69,13 +70,13 @@ export default function ContactPage() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                 <a
-                  href="mailto:chisomuayogu@gmail.com"
+                  href={CONTACT_DETAILS.emailHref}
                   className="button-primary inline-flex w-full items-center justify-center text-center sm:w-auto"
                 >
                   Email Me
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/chisomayogu"
+                  href={CONTACT_DETAILS.linkedinHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-secondary inline-flex w-full items-center justify-center gap-2 text-center sm:w-auto"
