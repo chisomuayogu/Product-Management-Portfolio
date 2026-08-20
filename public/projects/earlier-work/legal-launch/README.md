@@ -1,7 +1,15 @@
 # Legal Launch artefacts
 
-Expected authentic file:
+Approved evidence supplied:
 
-- `legal-launch-representative-visual.png`
+- `PROJECT LEGAL LAUNCH USER FLOW.png` — primary visual
+- `WIREFRAME FOR LEGALLAUNCH (2).png` — secondary visual
+- `PROJECT LEGAL LAUNCH DETAILS.png`
+- `PROJECT LEGAL LAUNCH DETAILS 2.png`
+- `PROJECT LEGAL LAUNCH DETAILS 3.png`
+- `PROJECT LEGAL LAUNCH DETAILS 4.png`
+- `PROJECT LEGAL LAUNCH DETAILS 5.png`
 
-Use the strongest available user flow, wireframe overview, or interface concept. Add a second visual only if it materially clarifies the work.
+The page uses the user flow and one Whimsical wireframe. The remaining files
+support the concise research, persona, prioritisation, user-story, and proposed
+metrics summaries.
