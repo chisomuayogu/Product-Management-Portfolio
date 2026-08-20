@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,9 +28,9 @@ export default function Navigation() {
             <Link href="/earlier-work" className="link-ghost">
               Earlier Work
             </Link>
-            <Link href="/cv" className="link-ghost">
-              CV
-            </Link>
+            <a href={CV_FILE_PATH} download={CV_FILE_NAME} className="link-ghost">
+              Download CV
+            </a>
             <Link href="/contact" className="button-primary text-sm">
               Contact
             </Link>
@@ -68,9 +69,14 @@ export default function Navigation() {
             <Link href="/earlier-work" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
               Earlier Work
             </Link>
-            <Link href="/cv" className="body-default hover:text-burgundy transition-colors duration-200" onClick={() => setIsOpen(false)}>
-              CV
-            </Link>
+            <a
+              href={CV_FILE_PATH}
+              download={CV_FILE_NAME}
+              className="body-default transition-colors duration-200 hover:text-burgundy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
+              onClick={() => setIsOpen(false)}
+            >
+              Download CV
+            </a>
             <Link href="/contact" className="button-primary text-sm inline-block text-center" onClick={() => setIsOpen(false)}>
               Contact
             </Link>

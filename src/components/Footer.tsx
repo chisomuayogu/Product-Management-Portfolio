@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -41,9 +42,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cv" className="text-ivory hover:text-blush transition-colors duration-200">
-                  CV
-                </Link>
+                <a
+                  href={CV_FILE_PATH}
+                  download={CV_FILE_NAME}
+                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                >
+                  Download CV
+                </a>
               </li>
             </ul>
           </div>
