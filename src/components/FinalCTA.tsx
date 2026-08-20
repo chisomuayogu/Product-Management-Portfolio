@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 
 export default function FinalCTA() {
   return (
@@ -19,9 +20,13 @@ export default function FinalCTA() {
             <span className="button-on-dark text-center cursor-not-allowed opacity-60" aria-label="LinkedIn details pending">
               LinkedIn · Pending
             </span>
-            <Link href="/cv" className="text-ivory hover:text-blush transition-colors duration-200 text-center">
-              View CV
-            </Link>
+            <a
+              href={CV_FILE_PATH}
+              download={CV_FILE_NAME}
+              className="text-center text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ivory"
+            >
+              Download CV
+            </a>
           </div>
           </div>
         </div>

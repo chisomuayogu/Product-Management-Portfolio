@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 
 export const metadata = {
   title: 'Contact | Chisom Ayogu — Product Manager',
@@ -81,6 +82,13 @@ export default function ContactPage() {
                 >
                   <span>View LinkedIn</span>
                   <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href={CV_FILE_PATH}
+                  download={CV_FILE_NAME}
+                  className="button-secondary inline-flex w-full items-center justify-center text-center sm:w-auto"
+                >
+                  Download CV
                 </a>
               </div>
             </div>

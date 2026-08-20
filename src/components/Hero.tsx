@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './Hero.module.css'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 
 export default function Hero() {
   return (
@@ -68,13 +69,13 @@ export default function Hero() {
               <span aria-hidden="true">↗</span>
               View My Work
             </Link>
-            <Link href="/cv" className={styles.secondaryButton}>
+            <a href={CV_FILE_PATH} download={CV_FILE_NAME} className={styles.secondaryButton}>
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <path d="M7 3.75h6.5L18 8.25v12H7z" />
                 <path d="M13.5 3.75v4.5H18M9.75 12h5M9.75 15.5h5" />
               </svg>
-              View CV
-            </Link>
+              Download CV
+            </a>
           </div>
         </div>
       </div>
