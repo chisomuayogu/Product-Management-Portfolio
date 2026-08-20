@@ -4,6 +4,7 @@ import { CONTACT_DETAILS } from '@/data/contact'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const footerLinkClass = 'text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush'
 
   return (
     <footer className="bg-near-black text-ivory border-t border-burgundy-light/30">
@@ -17,10 +18,10 @@ export default function Footer() {
           <div>
             <p className="eyebrow text-ivory/60 mb-4">Selected Work</p>
             <ul className="space-y-2 md:space-y-3">
-              <li><Link href="/case-studies/gradready" className="text-ivory hover:text-blush transition-colors duration-200">GradReady</Link></li>
-              <li><Link href="/case-studies/impacthub" className="text-ivory hover:text-blush transition-colors duration-200">ImpactHub</Link></li>
-              <li><Link href="/case-studies/bulk-market" className="text-ivory hover:text-blush transition-colors duration-200">Bulk-Market</Link></li>
-              <li><Link href="/case-studies/foodsaver" className="text-ivory hover:text-blush transition-colors duration-200">FoodSaver</Link></li>
+              <li><Link href="/case-studies/gradready" className={footerLinkClass}>GradReady</Link></li>
+              <li><Link href="/case-studies/impacthub" className={footerLinkClass}>ImpactHub</Link></li>
+              <li><Link href="/case-studies/bulk-market" className={footerLinkClass}>Bulk-Market</Link></li>
+              <li><Link href="/case-studies/foodsaver" className={footerLinkClass}>FoodSaver</Link></li>
             </ul>
           </div>
 
@@ -28,17 +29,17 @@ export default function Footer() {
             <p className="eyebrow text-ivory/60 mb-4">Navigation</p>
             <ul className="space-y-2 md:space-y-3">
               <li>
-                <Link href="/#work" className="text-ivory hover:text-blush transition-colors duration-200">
+                <Link href="/#work" className={footerLinkClass}>
                   Work
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-ivory hover:text-blush transition-colors duration-200">
+                <Link href="/about" className={footerLinkClass}>
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/earlier-work" className="text-ivory hover:text-blush transition-colors duration-200">
+                <Link href="/earlier-work" className={footerLinkClass}>
                   Earlier Work
                 </Link>
               </li>
@@ -46,7 +47,7 @@ export default function Footer() {
                 <a
                   href={CV_FILE_PATH}
                   download={CV_FILE_NAME}
-                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                  className={footerLinkClass}
                 >
                   Download CV
                 </a>
@@ -58,7 +59,7 @@ export default function Footer() {
             <p className="eyebrow text-ivory/60 mb-4">Connect</p>
             <ul className="space-y-2 md:space-y-3">
               <li>
-                <Link href="/contact" className="text-ivory hover:text-blush transition-colors duration-200">
+                <Link href="/contact" className={footerLinkClass}>
                   Contact
                 </Link>
               </li>
@@ -67,7 +68,7 @@ export default function Footer() {
                   href={CONTACT_DETAILS.linkedinHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                  className={footerLinkClass}
                 >
                   LinkedIn
                 </a>
@@ -75,7 +76,7 @@ export default function Footer() {
               <li>
                 <a
                   href={CONTACT_DETAILS.emailHref}
-                  className="text-ivory transition-colors duration-200 hover:text-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blush"
+                  className={footerLinkClass}
                 >
                   Email
                 </a>

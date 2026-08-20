@@ -63,7 +63,12 @@ function Flow({ steps }: { steps: string[] }) {
 
 function Artefact({ src, alt, width, height, caption, imageClassName = 'h-auto w-full', scrollOnMobile = false }: { src: string; alt: string; width: number; height: number; caption: string; imageClassName?: string; scrollOnMobile?: boolean }) {
   return (
-    <div className={scrollOnMobile ? 'overflow-x-auto pb-2' : undefined}>
+    <div
+      className={scrollOnMobile ? 'overflow-x-auto pb-2 focus-visible:rounded-xl' : undefined}
+      role={scrollOnMobile ? 'region' : undefined}
+      aria-label={scrollOnMobile ? `${caption}. Scroll horizontally on smaller screens.` : undefined}
+      tabIndex={scrollOnMobile ? 0 : undefined}
+    >
       <figure className={`${scrollOnMobile ? 'min-w-[48rem] md:min-w-0' : ''} overflow-hidden rounded-xl border border-burgundy/10 bg-white shadow-sm`}>
         <div className="bg-cream/35">
           <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1280px) 1152px, 100vw" className={imageClassName} />
@@ -135,7 +140,7 @@ export default function BulkMarketCaseStudy() {
 
       <CaseStudySection title="Partial Bulk-Order Failure" backgroundLight><div className="container-wide space-y-8"><InsightCard label="Example" highlighted><Flow steps={['100 units ordered', '15 damaged', 'Proportional resolution required']} /></InsightCard><p className="body-large text-grey-secondary max-w-3xl">Full-refund logic may be inappropriate for wholesale transactions when only part of a large order fails. The product therefore needed proportional dispute resolution.</p><Artefact src="/projects/bulk-market/BULK MARKET DISPUTE REQUEST SCREEN.png" alt="Bulk-Market dispute request showing 15 affected units from an order of 100, written evidence, uploads and a requested resolution" width={454} height={992} caption="Partial-order dispute input for 15 affected units from a 100-unit order" imageClassName="mx-auto h-auto w-full max-w-[30rem] object-contain" /></div></CaseStudySection>
 
-      <CaseStudySection title="Marketplace Metrics"><div className="container-wide space-y-8"><InsightCard label="North Star Metric" highlighted><p className="text-3xl md:text-4xl font-bold text-near-black mb-4">Monthly Successful Wholesale Transactions</p><p className="body-default text-grey-secondary">Successful transactions are more meaningful than registrations alone.</p></InsightCard><InsightCard label="Supporting KPIs"><BulletList items={['Gross Merchandise Value', 'Verified Active Sellers', 'Repeat Buyers', 'Trial-to-Full-Order Conversion', 'Dispute Rate', 'Average Order Value']} /></InsightCard></div></CaseStudySection>
+      <CaseStudySection title="Proposed Marketplace Metrics"><div className="container-wide space-y-8"><InsightCard label="North Star Metric" highlighted><p className="text-3xl md:text-4xl font-bold text-near-black mb-4">Monthly Successful Wholesale Transactions</p><p className="body-default text-grey-secondary">Successful transactions are more meaningful than registrations alone.</p></InsightCard><InsightCard label="Proposed Supporting KPIs"><BulletList items={['Gross Merchandise Value', 'Verified Active Sellers', 'Repeat Buyers', 'Trial-to-Full-Order Conversion', 'Dispute Rate', 'Average Order Value']} /></InsightCard></div></CaseStudySection>
 
       <CaseStudySection title="Revenue Model" backgroundLight><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="MVP"><p className="heading-card">Transaction Commission</p></InsightCard><InsightCard label="Future · Staged Monetisation"><BulletList items={['Seller subscriptions', 'Promoted products', 'Advertising', 'Logistics partnerships', 'Premium business services']} /></InsightCard></div></CaseStudySection>
 
