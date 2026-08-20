@@ -9,24 +9,16 @@ const toolCategories: ToolCategory[] = [
     tools: ['Jira', 'Asana', 'Trello'],
   },
   {
-    name: 'Research',
-    tools: ['SurveyMonkey', 'UserTesting'],
-  },
-  {
     name: 'Design & Collaboration',
     tools: ['Figma', 'Miro'],
   },
   {
     name: 'Documentation',
-    tools: ['Notion'],
-  },
-  {
-    name: 'Analytics & Experimentation',
-    tools: ['PostHog', 'Snowflake', 'LaunchDarkly'],
+    tools: ['Notion', 'Confluence'],
   },
   {
     name: 'Technical Collaboration',
-    tools: ['Swagger', 'Vercel', 'Claude Code'],
+    tools: ['Vercel', 'Claude Code'],
   },
 ]
 
@@ -43,7 +35,7 @@ export default function ToolsToolkit() {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
           {toolCategories.map((category) => (
             <div key={category.name} className="glass-panel rounded-lg p-6 md:p-8">
               {/* Category Name */}
