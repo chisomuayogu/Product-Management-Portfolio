@@ -2,12 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 import { PROFESSIONAL_HEADSHOT } from '@/data/profile'
 
 export const metadata = {
   title: 'About | Chisom Ayogu — Product Manager',
   description:
-    'Early-career Product Manager bringing a legal foundation to product discovery, strategy, and execution.',
+    'Early-career Product Manager combining legal rigour, user insight, and hands-on product execution.',
 }
 
 const projectProof = [
@@ -59,12 +60,12 @@ export default function AboutPage() {
         <section className="section-spacing hero-atmosphere page-hero">
           <div className="container-wide grid items-center gap-x-12 lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.8fr)] xl:gap-x-20">
             <div>
-              <p className="eyebrow mb-6 md:mb-8">About Chisom</p>
+              <p className="eyebrow mb-6 md:mb-8">About Me</p>
               <h1 className="heading-hero mb-8 max-w-5xl md:mb-10">
-                Early-career Product Manager bringing legal rigour to practical product work.
+                I turn ambiguous problems into clear product direction.
               </h1>
               <p className="body-large max-w-3xl text-grey-secondary">
-                I&apos;m building my Product Management career on a legal foundation, combining structured research, analysis, problem framing, and clear communication with hands-on experience across product discovery, strategy, and execution.
+                Early-career Product Manager combining legal rigour, user insight, and hands-on product execution.
               </p>
             </div>
 
@@ -110,15 +111,24 @@ export default function AboutPage() {
                 Professional Story
               </h2>
             </div>
-            <div className="max-w-3xl space-y-6 md:space-y-8">
-              <p className="body-large text-grey-secondary">
-                My legal training taught me to investigate carefully, analyse complex information, frame problems clearly, communicate with different stakeholders, and consider risk without losing sight of progress.
+            <div className="max-w-3xl space-y-7 md:space-y-9">
+              <p className="body-large text-near-black">
+                I didn&apos;t start my career in Product Management. I started in law, where I learned to investigate carefully, ask better questions, separate assumptions from evidence, and communicate clearly when the details matter.
               </p>
-              <p className="body-large text-grey-secondary">
-                Through Product Management bootcamps and portfolio projects, I have applied those strengths to user research, product strategy, prioritisation, user journeys, requirements, cross-functional collaboration, and prototyping. I have worked independently and within product teams, moving from early discovery to testable product direction.
+              <p className="body-large text-near-black">
+                What pulled me toward product was the same instinct in a different setting: understanding why something is not working, who it is really affecting, and what should change.
               </p>
-              <p className="body-large text-grey-secondary">
-                My work spans AI-enabled EdTech, CivicTech, B2B commerce, food-waste marketplaces, LegalTech career development, and future-of-work wellness. I&apos;m particularly interested in technology products that make complex user or operational journeys clearer and more useful.
+              <p className="body-large text-near-black">
+                Through Product Management training and hands-on projects, I began applying that way of thinking to digital products — researching users, defining problems, prioritising features, mapping journeys, writing requirements, prototyping experiences, and working across disciplines to move ideas toward something testable.
+              </p>
+              <p className="body-large text-near-black">
+                I&apos;ve now worked on product problems across AI-enabled EdTech, CivicTech, B2B marketplaces, food-waste commerce, LegalTech, and workplace wellness. The domains are different, but the pattern is consistent: understand the user, understand the system around them, identify the real constraint, and make deliberate product decisions.
+              </p>
+              <p className="body-large text-near-black">
+                I&apos;m especially comfortable in environments where the answer is not obvious yet. I enjoy turning ambiguity into structure, bringing research into decisions, and working closely with design, engineering, and stakeholders to keep the team focused on the problem that matters.
+              </p>
+              <p className="border-l-2 border-burgundy/30 pl-5 font-serif text-xl italic leading-relaxed text-burgundy-dark sm:pl-6 md:text-2xl md:leading-relaxed">
+                For me, good Product Management is not about shipping the most features. It is about helping a team build the right thing for the right reason — and knowing how we&apos;ll tell whether it worked.
               </p>
             </div>
           </div>
@@ -195,9 +205,9 @@ export default function AboutPage() {
                 What I&apos;m looking for
               </h2>
               <p className="body-large max-w-3xl text-grey-secondary">
-                I&apos;m looking for an early-career Product Manager opportunity where I can contribute to discovery and execution, work closely with design and engineering, take ownership of meaningful product problems, and continue growing through feedback and delivery.
+                I&apos;m looking for an early-career Product Manager opportunity where I can contribute to discovery and execution, work closely with design and engineering, take ownership of meaningful product problems, and grow through feedback, experimentation, and delivery.
               </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
                 <Link
                   href="/#work"
                   className="button-primary inline-flex w-full items-center justify-center text-center sm:w-auto"
@@ -210,6 +220,13 @@ export default function AboutPage() {
                 >
                   Contact Me
                 </Link>
+                <a
+                  href={CV_FILE_PATH}
+                  download={CV_FILE_NAME}
+                  className="link-primary inline-flex w-full items-center justify-center px-3 py-3 text-center font-medium sm:w-auto"
+                >
+                  Download CV
+                </a>
               </div>
             </div>
           </div>
