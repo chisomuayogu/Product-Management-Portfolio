@@ -7,11 +7,13 @@ import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
 import TwoColumn from '@/components/TwoColumn'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'GradReady Case Study | Chisom Ayogu',
   description: 'Independent Product Ownership: AI-powered EdTech platform helping bootcamp students document and showcase their work.',
-}
+  path: '/case-studies/gradready',
+})
 
 function FlowArtefact({ src, alt, width, height, caption }: { src: string; alt: string; width: number; height: number; caption: string }) {
   return (

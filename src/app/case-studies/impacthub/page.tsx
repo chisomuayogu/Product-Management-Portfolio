@@ -5,11 +5,13 @@ import Footer from '@/components/Footer'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'ImpactHub Case Study | Chisom Ayogu',
   description: 'Cross-functional product leadership for a CivicTech volunteer-management and impact-verification platform.',
-}
+  path: '/case-studies/impacthub',
+})
 
 const capabilityTags = ['Product Discovery', 'Cross-Functional Leadership', 'Jira', 'Stakeholder Management', 'User Journeys', 'Conflict Resolution']
 

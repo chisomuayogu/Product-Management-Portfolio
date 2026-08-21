@@ -4,12 +4,14 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 import { PROFESSIONAL_HEADSHOT } from '@/data/profile'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'About | Chisom Ayogu — Product Manager',
   description:
     'Early-career Product Manager combining legal rigour, user insight, and hands-on product execution.',
-}
+  path: '/about',
+})
 
 const projectProof = [
   {

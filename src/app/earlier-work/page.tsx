@@ -2,11 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Earlier Product Work | Chisom Ayogu — Product Manager',
   description: 'Earlier 2024 Product Management work across LegalTech career development and remote-work wellness.',
-}
+  path: '/earlier-work',
+})
 
 function BulletList({ items, columns = 1 }: { items: string[]; columns?: 1 | 2 }) {
   return (

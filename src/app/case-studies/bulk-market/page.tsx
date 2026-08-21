@@ -6,11 +6,13 @@ import CaseStudyHero from '@/components/CaseStudyHero'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Bulk-Market Case Study | Chisom Ayogu',
   description: 'A trust-first B2B wholesale marketplace capstone focused on marketplace strategy, buyer and seller journeys, escrow, and dispute resolution.',
-}
+  path: '/case-studies/bulk-market',
+})
 
 const researchFindings = [
   'Trust and fear of fraud were major barriers', 'Users struggled to compare prices',
