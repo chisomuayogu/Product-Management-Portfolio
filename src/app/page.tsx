@@ -7,6 +7,17 @@ import ToolsToolkit from '@/components/ToolsToolkit'
 import EarlierWork from '@/components/EarlierWork'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import {
+  createPageMetadata,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from '@/data/site'
+
+export const metadata = createPageMetadata({
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  path: '/',
+})
 
 export default function Home() {
   return (

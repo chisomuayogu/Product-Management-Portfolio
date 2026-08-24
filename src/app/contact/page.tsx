@@ -2,12 +2,14 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
 import { CONTACT_DETAILS } from '@/data/contact'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Contact | Chisom Ayogu — Product Manager',
   description:
     'Contact Chisom Ayogu about Associate, Junior, and early-career Product Management opportunities.',
-}
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (

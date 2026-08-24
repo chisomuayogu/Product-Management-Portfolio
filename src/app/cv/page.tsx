@@ -3,11 +3,13 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import InsightCard from '@/components/InsightCard'
 import { CV_FILE_NAME, CV_FILE_PATH } from '@/data/cv'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Product Management CV | Chisom Ayogu',
   description: 'Download the approved Product Management CV for Chisom Ayogu.',
-}
+  path: '/cv',
+})
 
 export default function CVPage() {
   return (

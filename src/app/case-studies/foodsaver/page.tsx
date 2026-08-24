@@ -6,11 +6,13 @@ import CaseStudyHero from '@/components/CaseStudyHero'
 import ProjectSnapshot from '@/components/ProjectSnapshot'
 import CaseStudySection from '@/components/CaseStudySection'
 import InsightCard from '@/components/InsightCard'
+import { createPageMetadata } from '@/data/site'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'FoodSaver Case Study | Chisom Ayogu',
   description: 'A FoodTech sustainability marketplace bootcamp project focused on problem-to-prototype execution.',
-}
+  path: '/case-studies/foodsaver',
+})
 
 const outcomes = [
   'Problem definition', 'Solution statement', 'Business goal', 'User goal', 'Environmental goal',
