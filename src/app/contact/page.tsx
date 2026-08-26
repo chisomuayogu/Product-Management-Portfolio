@@ -57,17 +57,6 @@ export default function ContactPage() {
                     </a>
                   </dd>
                 </div>
-                <div className="grid gap-2 py-6 sm:grid-cols-[7rem_minmax(0,1fr)] sm:items-center md:py-8">
-                  <dt className="eyebrow text-burgundy">Phone</dt>
-                  <dd>
-                    <a
-                      href="tel:+447833825338"
-                      className="link-primary inline-block font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-burgundy"
-                    >
-                      +44 7833 825338
-                    </a>
-                  </dd>
-                </div>
               </dl>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
