@@ -11,7 +11,7 @@ import { createPageMetadata } from '@/data/site'
 
 export const metadata = createPageMetadata({
   title: 'GradReady Case Study | Chisom Ayogu',
-  description: 'Independent Product Ownership: AI-powered EdTech platform helping bootcamp students document and showcase their work.',
+  description: 'Independent Product Ownership: AI-enabled EdTech concept helping bootcamp students document and showcase their work.',
   path: '/case-studies/gradready',
 })
 
@@ -46,7 +46,7 @@ export default function GradReadyCaseStudy() {
       <CaseStudyHero
         title="GradReady"
         positioning="Independent Product Ownership"
-        industry="AI-Powered EdTech / B2B SaaS"
+        industry="AI-Enabled EdTech / B2B SaaS"
         description="An AI-assisted portfolio platform that helps bootcamp students transform weekly reflections into structured case studies and CV bullet points."
       />
 
@@ -153,32 +153,32 @@ export default function GradReadyCaseStudy() {
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="body-large text-grey-secondary mb-8 md:mb-12">
-              As the solo PM, I owned the entire product vision, discovery, and strategy. I was responsible for understanding user needs, defining the MVP, making product trade-offs, and creating a validation strategy. This was not about feature building—it was about finding product-market fit.
+              As the solo PM, I owned the product vision, problem framing, MVP definition, product trade-offs, and validation planning. The work produced a testable product concept and prototype; it did not establish product-market fit.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div className="snapshot-mini">
                 <p className="eyebrow mb-3 md:mb-4">Discovery</p>
                 <ul className="space-y-2">
-                  <li className="body-small text-grey-secondary">User interviews</li>
-                  <li className="body-small text-grey-secondary">Bootcamp observation</li>
-                  <li className="body-small text-grey-secondary">Portfolio analysis</li>
+                  <li className="body-small text-grey-secondary">Problem framing</li>
+                  <li className="body-small text-grey-secondary">Target-user definition</li>
+                  <li className="body-small text-grey-secondary">Portfolio workflow analysis</li>
                 </ul>
               </div>
               <div className="snapshot-mini">
                 <p className="eyebrow mb-3 md:mb-4">Strategy</p>
                 <ul className="space-y-2">
                   <li className="body-small text-grey-secondary">MVP definition</li>
-                  <li className="body-small text-grey-secondary">Positioning</li>
-                  <li className="body-small text-grey-secondary">Go-to-market</li>
+                  <li className="body-small text-grey-secondary">Feature prioritisation</li>
+                  <li className="body-small text-grey-secondary">Success metrics</li>
                 </ul>
               </div>
               <div className="snapshot-mini">
-                <p className="eyebrow mb-3 md:mb-4">Validation</p>
+                <p className="eyebrow mb-3 md:mb-4">Validation Planning</p>
                 <ul className="space-y-2">
-                  <li className="body-small text-grey-secondary">Prototype testing</li>
-                  <li className="body-small text-grey-secondary">Usability testing</li>
-                  <li className="body-small text-grey-secondary">Hypothesis validation</li>
+                  <li className="body-small text-grey-secondary">Prototype test plan</li>
+                  <li className="body-small text-grey-secondary">AI-output review criteria</li>
+                  <li className="body-small text-grey-secondary">Hypothesis validation plan</li>
                 </ul>
               </div>
             </div>
@@ -206,7 +206,7 @@ export default function GradReadyCaseStudy() {
         <div className="container-wide">
           <div className="max-w-3xl mb-12 md:mb-16">
             <p className="body-large text-grey-secondary mb-8 md:mb-12">
-              Rather than building a full feature suite, I focused on validating the core thesis: Can we make documentation lightweight and consistent?
+              Rather than designing a full feature suite, I shaped the MVP around one core thesis to test: can documentation become lightweight and consistent?
             </p>
 
             <div className="space-y-6 md:space-y-8">
@@ -221,7 +221,7 @@ export default function GradReadyCaseStudy() {
               <InsightCard label="For Students">
                 <p className="heading-card mb-3">AI-Generated Drafts</p>
                 <p className="body-default text-grey-secondary mb-4">
-                  AI analyzes their weekly responses and auto-generates case study sections and CV bullets. Student edits and approves before export.
+                  AI synthesis turns weekly responses into draft case-study sections and CV bullets. The student reviews, edits, and approves the output before it can become saved portfolio evidence.
                 </p>
                 <p className="body-small text-burgundy font-medium">Why this? Accelerates portfolio assembly.</p>
               </InsightCard>
@@ -246,8 +246,48 @@ export default function GradReadyCaseStudy() {
         </div>
       </CaseStudySection>
 
+      {/* AI Product Thinking */}
+      <CaseStudySection title="AI Product Thinking" backgroundLight>
+        <div className="container-wide space-y-8 md:space-y-10">
+          <p className="body-large max-w-3xl text-grey-secondary">
+            GradReady uses an AI-enabled product workflow to support drafting while keeping the learner responsible for the accuracy and final form of their evidence.
+          </p>
+
+          <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5" aria-label="GradReady human-in-the-loop AI workflow">
+            {[
+              'Structured learner reflection',
+              'AI synthesis',
+              'Generated portfolio / CV evidence',
+              'User review and editing',
+              'Saved portfolio evidence',
+            ].map((step, index) => (
+              <li key={step} className="relative flex min-h-28 items-start gap-3 rounded-xl border border-burgundy/15 bg-white p-4 shadow-sm">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-burgundy text-sm font-semibold text-ivory">
+                  {index + 1}
+                </span>
+                <span className="pt-1 text-sm font-semibold leading-snug text-near-black">{step}</span>
+                {index < 4 && <span className="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 text-burgundy lg:block" aria-hidden="true">→</span>}
+              </li>
+            ))}
+          </ol>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <InsightCard label="Human-in-the-Loop UX" highlighted>
+              <p className="body-default text-grey-secondary">
+                Generated content is an editable draft, not unquestionable ground truth. The learner can review, correct, reject, or approve the output before it is saved, preserving user control and reducing the risk of inaccurate portfolio claims.
+              </p>
+            </InsightCard>
+            <InsightCard label="Academic Context">
+              <p className="body-default text-grey-secondary">
+                My product approach is also informed by postgraduate academic training in AI governance and the strategic and organisational implications of large language models (LLMs).
+              </p>
+            </InsightCard>
+          </div>
+        </div>
+      </CaseStudySection>
+
       {/* Core User Journey */}
-      <CaseStudySection title="Core User Journey" backgroundLight>
+      <CaseStudySection title="Core User Journey">
         <div className="container-wide">
           <div className="journey-timeline space-y-4 md:space-y-6">
             {[
@@ -259,11 +299,11 @@ export default function GradReadyCaseStudy() {
               {
                 step: '2',
                 title: 'Guided Reflection',
-                description: 'Student opens GradReady and answers 3-4 guided questions about their work (5-10 min)',
+                description: 'Student opens GradReady and answers a short set of guided questions about their work',
               },
               {
                 step: '3',
-                title: 'AI Processing',
+                title: 'AI Synthesis',
                 description: 'AI analyzes responses and generates a case study section and 2-3 CV bullet points',
               },
               {
@@ -273,8 +313,8 @@ export default function GradReadyCaseStudy() {
               },
               {
                 step: '5',
-                title: 'Portfolio Builds Over Time',
-                description: 'By bootcamp end, student has 12+ weeks of documented case studies and polished CV bullets',
+                title: 'Saved Evidence Builds Over Time',
+                description: 'Approved entries accumulate as saved portfolio evidence across the bootcamp',
               },
             ].map((item) => (
               <div
@@ -325,7 +365,7 @@ export default function GradReadyCaseStudy() {
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 1</p>
               <h3 className="heading-card mb-4 md:mb-6">Make Documentation Continuous, Not Retrospective</h3>
               <p className="body-default text-grey-secondary mb-4">
-                Rather than asking students to write everything at the end, weekly prompts create touchpoints throughout the bootcamp. This increases participation and memory quality.
+                Rather than asking students to write everything at the end, weekly prompts create touchpoints throughout the bootcamp. The approach is intended to support consistent participation and more contemporaneous recall.
               </p>
               <p className="body-small text-burgundy font-medium">Trade-off: Requires consistent engagement vs. One-time comprehensive reflection</p>
             </div>
@@ -343,7 +383,7 @@ export default function GradReadyCaseStudy() {
               <p className="eyebrow mb-4 md:mb-6 text-burgundy">Decision 3</p>
               <h3 className="heading-card mb-4 md:mb-6">AI Assists, Student Remains in Control</h3>
               <p className="body-default text-grey-secondary mb-4">
-                AI generates drafts but does not auto-publish. Students must review and approve all content. This maintains authenticity and builds trust.
+                AI generates drafts but does not auto-publish. Students must review and approve all content, a human-in-the-loop decision intended to support accuracy, authenticity, and trust.
               </p>
               <p className="body-small text-burgundy font-medium">Trade-off: Increased friction vs. Authenticity and approval</p>
             </div>
@@ -364,7 +404,7 @@ export default function GradReadyCaseStudy() {
       <CaseStudySection title="Prototype" backgroundLight>
         <div className="container-wide">
           <p className="body-large text-grey-secondary mb-10 md:mb-14">
-            I built an interactive prototype to test the core flow: weekly prompts → AI generation → student review. This allowed early user feedback without full engineering investment.
+            I built an interactive prototype to make the core flow testable: weekly prompts → AI synthesis → student review and editing → saved portfolio evidence. The prototype enables future feedback before full engineering investment.
           </p>
 
           <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between md:mb-8">
@@ -388,9 +428,9 @@ export default function GradReadyCaseStudy() {
           </div>
 
           <InsightCard>
-            <p className="eyebrow mb-4 mb-4">Prototype Approach</p>
+            <p className="eyebrow mb-4">Prototype Scope</p>
             <p className="body-default text-grey-secondary">
-              Built using Figma + prototyping. Showed realistic data (actual student responses) to make feedback concrete. Tested with 4-5 students and 2 bootcamp admins to validate core assumptions before any backend work.
+              Built in Figma using illustrative interface data, the prototype demonstrates onboarding, weekly reflection, AI-assisted drafting, learner review, portfolio evidence, and the administrator view. It is prepared for user validation; no formal participant testing is claimed.
             </p>
           </InsightCard>
 
@@ -450,34 +490,33 @@ export default function GradReadyCaseStudy() {
         </div>
       </CaseStudySection>
 
-      {/* Validation Gap */}
-      <CaseStudySection title="Validation Gap" backgroundLight>
-        <div className="container-wide">
+      {/* Validation Approach */}
+      <CaseStudySection title="Validation Approach" backgroundLight>
+        <div className="container-wide space-y-8">
           <InsightCard highlighted>
-            <p className="eyebrow mb-4 md:mb-6 text-burgundy">Honest Assessment</p>
-            <p className="heading-card mb-6 md:mb-8">The prototype and positioning exist, but primary user validation is incomplete.</p>
-            <p className="body-default text-grey-secondary mb-6 md:mb-8">
-              I have tested the concept with a small set of bootcamp students and admins. The reaction has been positive, but I have not yet conducted:
+            <p className="eyebrow mb-4 md:mb-6 text-burgundy">Evidence Boundary</p>
+            <p className="heading-card mb-6 md:mb-8">Formal usability testing was not documented for this one-week product concept.</p>
+            <p className="body-default text-grey-secondary">
+              No participant count, observed usability findings, or validated product outcomes are claimed. The next step would be moderated prototype walkthroughs with bootcamp students and structured concept interviews with bootcamp administrators.
             </p>
-            <ul className="space-y-3">
-              <li className="body-default text-grey-secondary flex gap-3">
-                <span className="text-burgundy">•</span>
-                <span>Comprehensive usability testing with diverse student cohorts</span>
-              </li>
-              <li className="body-default text-grey-secondary flex gap-3">
-                <span className="text-burgundy">•</span>
-                <span>Longer-term engagement metrics (do students use this for entire bootcamp?)</span>
-              </li>
-              <li className="body-default text-grey-secondary flex gap-3">
-                <span className="text-burgundy">•</span>
-                <span>Pricing and packaging research with bootcamp decision-makers</span>
-              </li>
-              <li className="body-default text-grey-secondary flex gap-3">
-                <span className="text-burgundy">•</span>
-                <span>Competitor analysis and market sizing</span>
-              </li>
-            </ul>
           </InsightCard>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <InsightCard label="Student Workflow">
+              <p className="body-default text-grey-secondary">
+                Test whether students can complete a structured reflection, understand the generated draft, edit it for accuracy, and save approved portfolio evidence.
+              </p>
+            </InsightCard>
+            <InsightCard label="Human Control">
+              <p className="body-default text-grey-secondary">
+                Test whether learners recognise that AI output requires review, can identify unsupported wording, and feel in control of what is retained.
+              </p>
+            </InsightCard>
+            <InsightCard label="Administrator Value">
+              <p className="body-default text-grey-secondary">
+                Test whether dashboard signals are understandable, useful for programme support, and compatible with existing bootcamp workflows.
+              </p>
+            </InsightCard>
+          </div>
         </div>
       </CaseStudySection>
 
@@ -513,7 +552,7 @@ export default function GradReadyCaseStudy() {
               <p className="eyebrow mb-3 md:mb-4 text-burgundy">Test 4</p>
               <p className="heading-card mb-4 md:mb-6">Admin Value Perception</p>
               <p className="body-default text-grey-secondary">
-                Do bootcamp admins perceive the dashboard as valuable? What metrics matter to them? Run discovery interviews with 10-15 bootcamp administrators to refine the admin product.
+                Do bootcamp admins perceive the dashboard as valuable? What metrics matter to them? Run discovery interviews with target bootcamp administrators to refine the admin product.
               </p>
             </div>
           </div>
@@ -604,7 +643,7 @@ export default function GradReadyCaseStudy() {
             <p className="eyebrow mb-4 md:mb-6">Current Status</p>
             <p className="heading-card mb-6 md:mb-8">Product strategy and prototype complete. Validation phase ahead.</p>
             <p className="body-default text-grey-secondary mb-6 md:mb-8">
-              The concept has been validated with early users, but this project lives in the space between validation and commercialization. The next phase requires building out the full product, running longer-term cohort tests, and refining the business model.
+              The current outcome is a product strategy, user flows, high-fidelity screens, and an interactive prototype prepared for validation. The concept has not undergone documented primary user validation, a commercial launch, or production AI deployment.
             </p>
             <p className="body-default text-grey-secondary">
               What I learned is applicable to any student-to-career product or AI-assisted documentation tool: timing of documentation matters, AI works best when students retain control, and separating user and buyer value requires distinct product experiences.

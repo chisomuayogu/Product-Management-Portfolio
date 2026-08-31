@@ -16,7 +16,7 @@ const projects: ProjectCard[] = [
   {
     id: 'gradready',
     name: 'GradReady',
-    category: 'AI-Powered EdTech · Individual Project',
+    category: 'AI-Enabled EdTech · Individual Project',
     description: 'Helping bootcamp students graduate with proof of what they built.',
     capability: 'Independent Product Ownership',
     href: '/case-studies/gradready',

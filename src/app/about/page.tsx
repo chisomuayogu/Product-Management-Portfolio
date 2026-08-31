@@ -127,6 +127,9 @@ export default function AboutPage() {
                 I&apos;ve now worked on product problems across AI-enabled EdTech, CivicTech, B2B marketplaces, food-waste commerce, LegalTech, and workplace wellness. The domains are different, but the pattern is consistent: understand the user, understand the system around them, identify the real constraint, and make deliberate product decisions.
               </p>
               <p className="body-large text-near-black">
+                Alongside my product work, my MRes Digital Management provides postgraduate academic grounding in AI governance and the strategic and organisational implications of large language models (LLMs).
+              </p>
+              <p className="body-large text-near-black">
                 I&apos;m especially comfortable in environments where the answer is not obvious yet. I enjoy turning ambiguity into structure, bringing research into decisions, and working closely with design, engineering, and stakeholders to keep the team focused on the problem that matters.
               </p>
               <p className="border-l-2 border-burgundy/30 pl-5 font-serif text-xl italic leading-relaxed text-burgundy-dark sm:pl-6 md:text-2xl md:leading-relaxed">
