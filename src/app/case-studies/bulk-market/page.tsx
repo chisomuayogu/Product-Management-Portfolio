@@ -15,9 +15,20 @@ export const metadata = createPageMetadata({
 })
 
 const researchFindings = [
-  'Trust and fear of fraud were major barriers', 'Users struggled to compare prices',
-  'Distance and travel costs were significant', 'Buyers wanted verified sellers',
-  'Buyers wanted refunds and protection', 'Ratings mattered', 'Users wanted smaller first orders',
+  'Trust and fear of fraud were the strongest sourcing barrier',
+  'Buyers needed easier price comparison across suppliers',
+  'Distance and travel costs limited supplier access',
+  'Respondents were willing to try a digital marketplace when trust was visible',
+  'Verification, buyer protection, ratings and reviews, and smaller Trial Orders were preferred trust signals',
+]
+
+const researchLedProductDecisions = [
+  'Seller verification',
+  'Trial Orders',
+  'Escrow and buyer protection',
+  'Ratings and reviews',
+  'Structured dispute handling',
+  'Cross-regional discovery and price comparison',
 ]
 
 const personalContributions = [
@@ -50,9 +61,10 @@ const lessons = [
 ]
 
 const skills = [
-  'Marketplace Thinking', 'Product Discovery', 'Product Strategy', 'Trust & Safety Thinking',
+  'Marketplace Thinking', 'Product Discovery', 'User Research', 'Product Strategy',
+  'Feature Prioritisation', 'Backlog Prioritisation', 'Trust & Safety Thinking',
   'Buyer/Seller Journey Design', 'Wireframing', 'Figma', 'Prototyping', 'Systems Thinking',
-  'Dispute Design', 'Transaction Thinking', 'Collaboration',
+  'Dispute Design', 'Transaction Thinking', 'Cross-Functional Collaboration',
 ]
 
 function BulletList({ items }: { items: string[] }) {
@@ -102,14 +114,17 @@ export default function BulkMarketCaseStudy() {
         <InsightCard label="Problem Statement" highlighted><p className="text-2xl md:text-3xl font-bold leading-snug text-near-black">“How might we enable buyers and sellers who do not already know each other to transact with enough confidence to move wholesale activity beyond existing personal networks?”</p></InsightCard>
       </div></CaseStudySection>
 
-      <CaseStudySection title="Research"><div className="container-wide space-y-8">
+      <CaseStudySection title="Research → Insight → Product Decision"><div className="container-wide space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="My Participation"><BulletList items={['Part of the research team', 'Product-thinking meetings', 'Product-strategy discussions']} /></InsightCard><InsightCard label="Team Research"><BulletList items={['Surveys', 'Stakeholder interviews', 'Competitor analysis', 'Market research']} /></InsightCard></div>
-        <InsightCard label="Research Findings"><BulletList items={researchFindings} /></InsightCard>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <InsightCard label="Research"><BulletList items={researchFindings} /></InsightCard>
+          <InsightCard label="Insight" highlighted><p className="heading-card">Buyers were loyal to the trust provided by existing sourcing channels, not necessarily to the channel itself.</p></InsightCard>
+          <InsightCard label="Product Decision"><BulletList items={researchLedProductDecisions} /></InsightCard>
+        </div>
         <Artefact src="/projects/bulk-market/BULK MARKET RESEARCH FINDINGS.png" alt="Bulk-Market research findings showing trust, price comparison, travel barriers, willingness to adopt, and preferred trust signals" width={1448} height={1086} caption="Survey findings informing the marketplace trust and discovery strategy" scrollOnMobile />
+        <Artefact src="/projects/bulk-market/BULK MARKET RESEARCH SYNTHESIS.png" alt="Bulk-Market research synthesis summarising recurring user needs, trust barriers, evidence, and product implications" width={1448} height={1086} caption="Research synthesis connecting participant evidence to product priorities" scrollOnMobile />
         <Artefact src="/projects/bulk-market/BULK MARKET COMPETITOR ANALYSIS.png" alt="Bulk-Market competitor analysis comparing physical markets, WhatsApp and Facebook groups, trusted suppliers, Jumia, Kikuu and Alibaba" width={1448} height={1086} caption="Competitor analysis connecting existing alternatives to product opportunities" scrollOnMobile />
       </div></CaseStudySection>
-
-      <CaseStudySection title="Key Insight" backgroundLight><div className="container-wide space-y-8"><InsightCard highlighted><p className="text-3xl md:text-4xl font-bold leading-tight text-near-black">“Users were not necessarily loyal to WhatsApp, phone calls, or physical markets. They were loyal to the trust those channels provided.”</p></InsightCard><Artefact src="/projects/bulk-market/BULK MARKET RESEARCH SYNTHESIS.png" alt="Bulk-Market research synthesis summarising recurring user needs, trust barriers, evidence, and product implications" width={1448} height={1086} caption="Research synthesis connecting participant evidence to product priorities" scrollOnMobile /></div></CaseStudySection>
 
       <CaseStudySection title="Target Users"><div className="container-wide grid grid-cols-1 md:grid-cols-2 gap-6"><InsightCard label="Buyers"><BulletList items={['Retailers', 'SMEs', 'Online vendors', 'Restaurants', 'Hotels', 'Schools', 'Institutional buyers', 'Distributors']} /></InsightCard><InsightCard label="Sellers"><BulletList items={['Manufacturers', 'Wholesalers', 'Distributors', 'Farmers', 'Importers', 'Exporters']} /></InsightCard></div></CaseStudySection>
 
@@ -121,6 +136,19 @@ export default function BulkMarketCaseStudy() {
       </div></CaseStudySection>
 
       <CaseStudySection title="My Personal Contribution" backgroundLight><div className="container-wide space-y-6"><p className="body-large text-near-black max-w-3xl font-medium">The broader marketplace strategy and product output were collaborative. My direct contribution focused on research, journeys, interface design, dispute handling, and prototype integration.</p><InsightCard label="I Personally"><BulletList items={personalContributions} /></InsightCard></div></CaseStudySection>
+
+      <CaseStudySection title="Feature Prioritisation"><div className="container-wide space-y-8">
+        <p className="body-large text-grey-secondary max-w-3xl">
+          The team prioritised trust mechanisms because trust and fear of fraud were the strongest research signal. I contributed research and product-strategy input to this collaborative feature and backlog prioritisation; I did not individually own the full team backlog.
+        </p>
+        <InsightCard label="Prioritisation Logic" highlighted>
+          <Flow steps={['Make trust visible', 'Reduce first-order risk', 'Protect the transaction', 'Support resolution', 'Expand supplier discovery']} />
+        </InsightCard>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <InsightCard label="Prioritised Trust Mechanisms"><BulletList items={['Seller verification', 'Trial Orders', 'Escrow', 'Ratings and reviews', 'Dispute handling']} /></InsightCard>
+          <InsightCard label="Why These Came First"><p className="body-default text-grey-secondary">These mechanisms directly addressed the research evidence around unknown suppliers, payment risk, limited accountability, and the need to build confidence before buyers expand beyond existing sourcing networks.</p></InsightCard>
+        </div>
+      </div></CaseStudySection>
 
       <CaseStudySection title="Buyer Journey"><div className="container-wide space-y-8"><InsightCard label="Journey"><Flow steps={['Landing', 'Sign Up', 'Buyer Onboarding', 'Marketplace', 'Browse', 'Search', 'Filter', 'Product Detail', 'Purchase Flow']} /></InsightCard><p className="body-large text-grey-secondary max-w-3xl">I worked directly on the onboarding and discovery experience.</p><div className="space-y-6"><Artefact src="/projects/bulk-market/BULK MARKET BUYER  SCREENS 1.png" alt="Bulk-Market buyer registration and onboarding journey from welcome screen through account verification and access" width={3324} height={1076} caption="Buyer access and onboarding journey" scrollOnMobile /><Artefact src="/projects/bulk-market/BULK MARKET BUYER  SCREENS 2.png" alt="Bulk-Market buyer journey from product discovery through filtering, seller evaluation, cart, checkout and secure payment" width={3286} height={1718} caption="Buyer discovery, comparison and protected purchase journey" scrollOnMobile /><Artefact src="/projects/bulk-market/BULK MARKET BUYER  SCREENS 3.png" alt="Bulk-Market buyer journey through payment confirmation, order tracking, delivery status, ratings and post-order actions" width={3004} height={1192} caption="Buyer payment confirmation and post-order journey; exploratory concepts shown are not part of the committed MVP" scrollOnMobile /></div></div></CaseStudySection>
 
